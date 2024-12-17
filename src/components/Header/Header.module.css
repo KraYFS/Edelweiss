@@ -1,0 +1,72 @@
+.header {
+    width: 100%;
+}
+
+.header_first_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 50px;
+}
+
+.header_logo {
+    font-size: 28px;
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.header_info {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.header_mail {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_mail_title {
+    font-size: 14px;
+    color: var(--dark-blue);
+}
+
+.mail {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--main-blue);
+}
+
+.header_telegram {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.telegram_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_telegram_title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.header_telegram_subtitle {
+    color: var(--dark-blue05);
+}
+
+.callMe_btn {
+    background-color: var(--main-blue);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 20px;
+    transition: .2s all;
+}
+
+.callMe_btn:hover {
+    background-color: var(--dark-blue);
+}
