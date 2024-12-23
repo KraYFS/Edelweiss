@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px 50px;
+    border-bottom: 1px solid var(--blue);
 }
 
 .header_logo {
@@ -68,5 +69,27 @@
 }
 
 .callMe_btn:hover {
-    background-color: var(--dark-blue);
+    background-color: var(--main-blue-hover);
+}
+
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_links {
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 28px 0px;
+    color: var(--dark-blue);
+    font-weight: 600;
+    border-right: 1px solid var(--blue);
+    width: 100%;
+    text-align: center;
+    transition: .2s all;
+}
+
+.nav_links:hover {
+    background-color: var(--blue-light);
+    color: var(--main-blue);
 }

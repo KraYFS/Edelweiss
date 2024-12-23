@@ -32,9 +32,15 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
-                <div className={styles.header_second_block}>
-
-                </div>
+                <nav className={styles.header_nav}>
+                    <a href="#" className={styles.nav_links}>Каталог</a>
+                    <a href="#" className={styles.nav_links}>проектирование</a>
+                    <a href="#" className={styles.nav_links}>строительство</a>
+                    <a href="#" className={styles.nav_links}>о компании</a>
+                    <a href="#" className={styles.nav_links}>блог</a>
+                    <a href="#" className={styles.nav_links}>клиентам</a>
+                    <a href="#" className={styles.nav_links}>контакты</a>
+                </nav>
             </div>
         </header>
     );
