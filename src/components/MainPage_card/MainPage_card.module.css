@@ -1,0 +1,19 @@
+.MainPageCard {
+    position: relative;
+    background: url('../../assets/mainPageBack.png') top no-repeat;
+    width: 100%;
+    min-height: 880px;
+}
+
+.mainPage_card_title {
+    position: absolute;
+    top: 50%;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 28px;
+    max-width: 355px;
+}
+
+.mainPage_card_price {
+    color: var(--orange);
+}
