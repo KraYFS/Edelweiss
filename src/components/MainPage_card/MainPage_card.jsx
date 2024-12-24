@@ -1,5 +1,10 @@
 import styles from './MainPage_card.module.css'
 import squareMeter from '../../assets/icons/mainPageCardIcons/squareMeter.svg'
+import square from '../../assets/icons/mainPageCardIcons/square.svg'
+import stairs from '../../assets/icons/mainPageCardIcons/stairs.svg'
+import bathroom from '../../assets/icons/mainPageCardIcons/bathroom.svg'
+import foundation from '../../assets/icons/mainPageCardIcons/foundation.svg'
+import bedroom from '../../assets/icons/mainPageCardIcons/bedroom.svg'
 
 const MainPageCard = () => {
     return (
@@ -19,24 +24,24 @@ const MainPageCard = () => {
                             91 м²
                         </div>
                         <div className={styles.house_option}>
-                            <img src={squareMeter} alt="" />
-                            91 м²
+                            <img src={square} alt="" />
+                            9.40 x 7.50 м
                         </div>
                         <div className={styles.house_option}>
-                            <img src={squareMeter} alt="" />
-                            91 м²
+                            <img src={foundation} alt="" />
+                            Свайный
                         </div>
                         <div className={styles.house_option}>
-                            <img src={squareMeter} alt="" />
-                            91 м²
+                            <img src={stairs} alt="" />
+                            1
                         </div>
                         <div className={styles.house_option}>
-                            <img src={squareMeter} alt="" />
-                            91 м²
+                            <img src={bedroom} alt="" />
+                            2
                         </div>
                         <div className={styles.house_option}>
-                            <img src={squareMeter} alt="" />
-                            91 м²
+                            <img src={bathroom} alt="" />
+                            1
                         </div>
                     </div>
                 </div>
