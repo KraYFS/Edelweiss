@@ -38,3 +38,21 @@
     align-items: start;
     gap: 10px;
 }
+
+@media screen and (max-width: 1480px) {
+    .mainPage_card_content {
+        max-width: 1200px;
+    }
+  }
+  
+  @media screen and (max-width: 1290px) {
+    .mainPage_card_content {
+        max-width: 800px;
+    }
+  }
+  
+  @media screen and (max-width: 860px) {
+    .mainPage_card_content {
+        max-width: 600px;
+    }
+  }
