@@ -6,14 +6,35 @@
 }
 
 .mainPage_card_title {
-    position: absolute;
-    top: 50%;
     color: var(--white);
     font-weight: 700;
     font-size: 28px;
     max-width: 355px;
 }
 
+.mainPage_card_content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    max-width: 1470px;
+}
+
 .mainPage_card_price {
     color: var(--orange);
+}
+
+.house_options {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.house_option {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
 }
