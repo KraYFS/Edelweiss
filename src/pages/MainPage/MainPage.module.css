@@ -5,3 +5,40 @@
     --swiper-pagination-bullet-width: 12px;
     --swiper-pagination-bullet-height: 12px;
 }
+
+.category_house {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 80px;
+}
+
+.category_house_item {
+    padding: 28px 0px 28px 160px;
+    position: relative;
+    width: 100%;
+    max-width: 438px;
+    display: flex;
+    align-items: center;
+    background-color: var(--main-blue);
+}
+
+.category_house_item_title {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 600;
+    max-width: 240px;
+    display: flex;
+    align-items: center;
+}
+
+.category_house_item_title svg {
+    position: absolute;
+    right: 30px;
+}
+
+.category_house_item_img {
+    position: absolute;
+    left: -24px;
+}
