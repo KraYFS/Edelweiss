@@ -97,52 +97,76 @@ const MainPage = () => {
             </div>
             <section className={styles.latest_works}>
                 <div className="container">
-                    <Title text="Готовые дома" />
+                    <Title align="center" text="Готовые дома" />
                     <div className={styles.latest_works_inner}>
                         <div className={styles.latest_work}>
                             <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <span className={styles.info_icon}>
+                                ⓘ
+                            </span>
                             <div className={styles.latest_work_hover_content}>
                                 тут надпись типа подробнее или просто инфа о доме и ссылка на него
                             </div>
                         </div>
                         <div className={styles.latest_work}>
                             <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <span className={styles.info_icon}>
+                                ⓘ
+                            </span>
                             <div className={styles.latest_work_hover_content}>
                                 тут надпись типа подробнее или просто инфа о доме и ссылка на него
                             </div>
                         </div>
                         <div className={styles.latest_work}>
                             <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <span className={styles.info_icon}>
+                                ⓘ
+                            </span>
                             <div className={styles.latest_work_hover_content}>
                                 тут надпись типа подробнее или просто инфа о доме и ссылка на него
                             </div>
                         </div>
                         <div className={styles.latest_work}>
                             <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <span className={styles.info_icon}>
+                                ⓘ
+                            </span>
                             <div className={styles.latest_work_hover_content}>
                                 тут надпись типа подробнее или просто инфа о доме и ссылка на него
                             </div>
                         </div>
                         <div className={styles.latest_work}>
                             <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <span className={styles.info_icon}>
+                                ⓘ
+                            </span>
                             <div className={styles.latest_work_hover_content}>
                                 тут надпись типа подробнее или просто инфа о доме и ссылка на него
                             </div>
                         </div>
                         <div className={styles.latest_work}>
                             <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <span className={styles.info_icon}>
+                                ⓘ
+                            </span>
                             <div className={styles.latest_work_hover_content}>
                                 тут надпись типа подробнее или просто инфа о доме и ссылка на него
                             </div>
                         </div>
                         <div className={styles.latest_work}>
                             <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <span className={styles.info_icon}>
+                                ⓘ
+                            </span>
                             <div className={styles.latest_work_hover_content}>
                                 тут надпись типа подробнее или просто инфа о доме и ссылка на него
                             </div>
                         </div>
                         <div className={styles.latest_work}>
                             <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <span className={styles.info_icon}>
+                                ⓘ
+                            </span>
                             <div className={styles.latest_work_hover_content}>
                                 тут надпись типа подробнее или просто инфа о доме и ссылка на него
                             </div>
@@ -151,6 +175,40 @@ const MainPage = () => {
                 </div>
                 <Button padding='23px 56px' text="Показать все проекты →" />
             </section>
+            <section className={styles.advantages}>
+                <div className="container">
+                    <Title align="center" text="Почему нужно заказывать дома у профессионалов" />
+                    <div className={styles.advantages_inner}>
+                        <div className={styles.advantages_item}>
+                            <h4 className={styles.advantages_item_title}>Ради надежности</h4>
+                            <div className={styles.advantages_item_subtitle}>Мы проектируем дома, которые  сопротивляются воздействиям окружающей среды (снегу, ветру, ливням, морозам)</div>
+                        </div>
+                        <div className={styles.advantages_item}>
+                            <h4 className={styles.advantages_item_title}>Ради удобства</h4>
+                            <div className={styles.advantages_item_subtitle}>Домом должно быть удобно пользоваться. Продуманный дом, это когда лишние потоки не пересекаются, грязь с улицы не разносится по дому, форма комнат детально рассчитана для размещения мебели, а транзитные зоны минимальны. </div>
+                        </div>
+                        <div className={styles.advantages_item}>
+                            <h4 className={styles.advantages_item_title}>Ради надежности</h4>
+                            <div className={styles.advantages_item_subtitle}>Мы проектируем дома, которые  сопротивляются воздействиям окружающей среды (снегу, ветру, ливням, морозам)</div>
+                        </div>
+                        <div className={styles.advantages_item}>
+                            <h4 className={styles.advantages_item_title}>Ради надежности</h4>
+                            <div className={styles.advantages_item_subtitle}>Мы проектируем дома, которые  сопротивляются воздействиям окружающей среды (снегу, ветру, ливням, морозам)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <section className={styles.about_company}>
+                <div className="container">
+                    <Title text="О компании" />
+                    <h4 className={styles.about_company_text}>
+                        «Эдельвейс буд» — современная, динамично развивающаяся компания, которая уже более 5 лет строит уютные, качественные дома из надежных материалов. Мы построили более 600 домов по всей Украине.
+                        <br />
+                        <br />
+                        Компания известна тем что построила сотни домов и тд
+                    </h4>
+                </div>
+            </section> */}
         </div>
     );
 }

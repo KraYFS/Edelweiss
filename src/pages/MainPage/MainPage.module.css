@@ -58,7 +58,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     color: white;
     transition: .5s ease;
     display: flex;
@@ -67,14 +67,27 @@
     font-size: 26px;
 }
 
+.info_icon {
+    position: absolute;
+    z-index: 2;
+    left: 5px;
+    top: 5px;
+    font-size: 30px;
+    transition: .3s ease;
+}
+
 .latest_work:hover {
     .latest_work_hover_content {
-        top: 0;
+        bottom: 0;
+    }
+
+    .info_icon {
+        opacity: 0;
     }
 }
 
 .latest_work {
-    width: 25%;
+    width: 24%;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -84,6 +97,49 @@
     display: flex;
     flex-wrap: wrap;
     margin: 30px 0px 30px 0px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.about_company {
+    padding: 40px 0px;
+}
+
+.about_company_text {
+    font-size: 18px;
+    color: var(--dark-blue);
+    margin-top: 24px;
+}
+
+.advantages {
+    padding: 80px 0px 40px 0px;
+}
+
+.advantages_inner {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.advantages_item {
+    padding: 32px;
+    background-color: var(--blue-light);
+    border-radius: 5px;
+}
+
+.advantages_item_title {
+    color: var(--main-blue);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.advantages_item_subtitle {
+    font-size: 18px;
+    color: var(--dark-blue);
+    max-width: 620px;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 1600px) {
