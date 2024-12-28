@@ -1,5 +1,6 @@
 import styles from './Header.module.css'
 import telegramIcon from '../../assets/icons/telegramIcon.svg'
+import Button from '../UI/Button/Button';
 
 const Header = () => {
     return (
@@ -27,9 +28,21 @@ const Header = () => {
                                 </span>
                             </div>
                         </div>
-                        <button className={styles.callMe_btn}>
-                            Обратный вызов
-                        </button>
+                        <Button padding="12px 20px" text="Обратный звонок" />
+                    </div>
+                    <div className={styles.burger_menu}>
+                        {/* <div className={styles.burger_menu_inner}>
+                        <nav className={styles.header_nav}>
+                            <a href="#" className={styles.nav_links}>Каталог</a>
+                            <a href="#" className={styles.nav_links}>проектирование</a>
+                            <a href="#" className={styles.nav_links}>строительство</a>
+                            <a href="#" className={styles.nav_links}>о компании</a>
+                            <a href="#" className={styles.nav_links}>блог</a>
+                            <a href="#" className={styles.nav_links}>клиентам</a>
+                            <a href="#" className={styles.nav_links}>контакты</a>
+                        </nav>
+                    </div> */}
+                        <span className={styles.burger_menu_btn}>|||</span>
                     </div>
                 </div>
                 <nav className={styles.header_nav}>

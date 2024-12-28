@@ -59,20 +59,6 @@
     color: var(--dark-blue05);
 }
 
-.callMe_btn {
-    background-color: var(--main-blue);
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 700;
-    padding: 12px 20px;
-    transition: .2s all;
-    border-radius: 5px;
-}
-
-.callMe_btn:hover {
-    background-color: var(--main-blue-hover);
-}
-
 .header_nav {
     display: flex;
     justify-content: space-between;
@@ -93,4 +79,35 @@
 .nav_links:hover {
     background-color: var(--blue-light);
     color: var(--main-blue);
+}
+
+.burger_menu {
+    display: none;
+    position: absolute;
+    right: 30px;
+}
+
+.burger_menu_btn {
+    font-size: 30px;
+    transform: rotate(90deg);
+    display: block;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 920px) {
+    .header_info {
+        display: none;
+    }
+
+    .header_first_block {
+        justify-content: center;
+    }
+
+    .header_nav {
+        display: none;
+    }
+
+    .burger_menu {
+        display: block;
+    }
 }

@@ -1,17 +1,24 @@
 import MainPageCard from '../../components/MainPage_card/MainPage_card';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import styles from './MainPage.module.css'
 import img from '../../assets/categoryItem.png'
+import latestWork from '../../assets/latestWork.png'
+import Title from '../../components/UI/Title/Title';
+import Button from '../../components/UI/Button/Button';
 
 const MainPage = () => {
     return (
         <div className={styles.mainPage}>
             <Swiper
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 slidesPerView={1}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
                 pagination={{ clickable: true }}
             >
                 <SwiperSlide>
@@ -87,8 +94,63 @@ const MainPage = () => {
                         </h2>
                     </a>
                 </section>
-
             </div>
+            <section className={styles.latest_works}>
+                <div className="container">
+                    <Title text="Готовые дома" />
+                    <div className={styles.latest_works_inner}>
+                        <div className={styles.latest_work}>
+                            <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <div className={styles.latest_work_hover_content}>
+                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
+                            </div>
+                        </div>
+                        <div className={styles.latest_work}>
+                            <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <div className={styles.latest_work_hover_content}>
+                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
+                            </div>
+                        </div>
+                        <div className={styles.latest_work}>
+                            <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <div className={styles.latest_work_hover_content}>
+                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
+                            </div>
+                        </div>
+                        <div className={styles.latest_work}>
+                            <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <div className={styles.latest_work_hover_content}>
+                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
+                            </div>
+                        </div>
+                        <div className={styles.latest_work}>
+                            <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <div className={styles.latest_work_hover_content}>
+                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
+                            </div>
+                        </div>
+                        <div className={styles.latest_work}>
+                            <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <div className={styles.latest_work_hover_content}>
+                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
+                            </div>
+                        </div>
+                        <div className={styles.latest_work}>
+                            <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <div className={styles.latest_work_hover_content}>
+                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
+                            </div>
+                        </div>
+                        <div className={styles.latest_work}>
+                            <img style={{ width: '367px' }} src={latestWork} alt="" />
+                            <div className={styles.latest_work_hover_content}>
+                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Button padding='23px 56px' text="Показать все проекты →" />
+            </section>
         </div>
     );
 }
