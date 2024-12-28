@@ -16,7 +16,7 @@ const MainPage = () => {
                 modules={[Pagination, Autoplay]}
                 slidesPerView={1}
                 autoplay={{
-                    delay: 2500,
+                    delay: 4000,
                     disableOnInteraction: false,
                 }}
                 pagination={{ clickable: true }}

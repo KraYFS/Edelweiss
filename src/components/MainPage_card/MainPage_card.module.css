@@ -46,13 +46,35 @@
   }
   
   @media screen and (max-width: 1290px) {
-    .mainPage_card_content {
-        max-width: 800px;
+        .mainPage_card_content {
+            max-width: 800px;
+        }
     }
+
+    @media screen and (max-width: 860px) {
+        .mainPage_card_title {
+            font-size: 22px;
+        }
+
+        .mainPage_card_content {
+            max-width: 400px;
+        }
+        
+        .house_option {
+            font-size: 14px;
+          }
+    
+          .house_option img {
+            width: 30px;
+        }
+    }
+
+  @media screen and (max-width: 768px) {
+      .MainPageCard {
+            min-height: 680px;
+      }
+      .mainPage_card_content {
+          max-width: 350px;
+      }
   }
   
-  @media screen and (max-width: 860px) {
-    .mainPage_card_content {
-        max-width: 600px;
-    }
-  }
