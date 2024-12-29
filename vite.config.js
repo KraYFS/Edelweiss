@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const baseURL =
-    mode === "local-dev" ? "http://localhost:3000" : "https://api.cs-world.com.ua";
+    mode === "local-dev" ? "http://localhost:3000" : "https://edelweiss-back.onrender.com";
 
   return {
     plugins: [react()],
