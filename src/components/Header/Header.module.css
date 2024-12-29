@@ -1,0 +1,113 @@
+.header {
+    width: 100%;
+}
+
+.header_first_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 50px;
+    border-bottom: 1px solid var(--blue);
+}
+
+.header_logo {
+    font-size: 28px;
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.header_info {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.header_mail {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_mail_title {
+    font-size: 14px;
+    color: var(--dark-blue);
+}
+
+.mail {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--main-blue);
+}
+
+.header_telegram {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.telegram_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_telegram_title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.header_telegram_subtitle {
+    color: var(--dark-blue05);
+}
+
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_links {
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 28px 0px;
+    color: var(--dark-blue);
+    font-weight: 600;
+    border-right: 1px solid var(--blue);
+    width: 100%;
+    text-align: center;
+    transition: .2s all;
+}
+
+.nav_links:hover {
+    background-color: var(--blue-light);
+    color: var(--main-blue);
+}
+
+.burger_menu {
+    display: none;
+    position: absolute;
+    right: 30px;
+}
+
+.burger_menu_btn {
+    font-size: 30px;
+    transform: rotate(90deg);
+    display: block;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 920px) {
+    .header_info {
+        display: none;
+    }
+
+    .header_first_block {
+        justify-content: center;
+    }
+
+    .header_nav {
+        display: none;
+    }
+
+    .burger_menu {
+        display: block;
+    }
+}
