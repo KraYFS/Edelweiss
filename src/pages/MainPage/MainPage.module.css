@@ -74,6 +74,7 @@
     top: 5px;
     font-size: 30px;
     transition: .3s ease;
+    color: var(--main-blue);
 }
 
 .latest_work:hover {
