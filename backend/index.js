@@ -8,9 +8,6 @@ const DB_URL = 'mongodb+srv://edelweissBack:edelweissBackPass@cluster0.txcsr.mon
 
 const app = express()
 
-app.use(cors({
-    origin: ['http://localhost:5173']
-}))
 app.use(express.json())
 app.use('/api', router)
 
