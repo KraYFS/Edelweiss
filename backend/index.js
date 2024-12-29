@@ -1,6 +1,6 @@
 import express from "express"
 import mongoose from "mongoose";
-import router from "./Routers/router.js";
+import HouseInfoRouter from "./Routers/HouseInfo.router.js";
 import cors from "cors";
 
 const PORT = 3000;
@@ -12,7 +12,7 @@ app.use(cors({
     origin: ['http://localhost:5173', 'https://edelweissbud.netlify.app']
 }));
 app.use(express.json())
-app.use('/api', router)
+app.use('/api', HouseInfoRouter)
 
 async function startApp() {
     try {

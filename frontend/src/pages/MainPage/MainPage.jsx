@@ -1,11 +1,16 @@
-import MainPageCard from '../../components/MainPage_card/MainPage_card';
+import MainPageCard from '../../components/MainPage_card/MainPage_card.jsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import styles from './MainPage.module.css'
-import img from '../../assets/categoryItem.png'
-import latestWork from '../../assets/latestWork.png'
+import LatestWorkItem from '../../components/LatestWorkItem/LatestWorkItem.jsx'
+import categoryItem1 from '../../assets/categoryHouse/categoryItem1.png'
+import categoryItem2 from '../../assets/categoryHouse/categoryItem2.png'
+import categoryItem3 from '../../assets/categoryHouse/categoryItem3.png'
+import categoryItem4 from '../../assets/categoryHouse/categoryItem4.png'
+import categoryItem5 from '../../assets/categoryHouse/categoryItem5.png'
+import categoryItem6 from '../../assets/categoryHouse/categoryItem6.png'
 import Title from '../../components/UI/Title/Title';
 import Button from '../../components/UI/Button/Button';
 
@@ -34,7 +39,7 @@ const MainPage = () => {
             <div className="container">
                 <section className={styles.category_house}>
                     <a href='#' className={styles.category_house_item}>
-                        <img className={styles.category_house_item_img} src={img} alt="" />
+                        <img className={styles.category_house_item_img} src={categoryItem1} alt="" />
                         <h2 className={styles.category_house_item_title}>
                             Готовые одноэтажные дома
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +49,7 @@ const MainPage = () => {
                         </h2>
                     </a>
                     <a href='#' className={styles.category_house_item}>
-                        <img className={styles.category_house_item_img} src={img} alt="" />
+                        <img className={styles.category_house_item_img} src={categoryItem2} alt="" />
                         <h2 className={styles.category_house_item_title}>
                             Готовые двухэтажные дома
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +59,7 @@ const MainPage = () => {
                         </h2>
                     </a>
                     <a href='#' className={styles.category_house_item}>
-                        <img className={styles.category_house_item_img} src={img} alt="" />
+                        <img className={styles.category_house_item_img} src={categoryItem3} alt="" />
                         <h2 className={styles.category_house_item_title}>
                             Готовые дома с терассой
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,7 +69,7 @@ const MainPage = () => {
                         </h2>
                     </a>
                     <a href='#' className={styles.category_house_item}>
-                        <img className={styles.category_house_item_img} src={img} alt="" />
+                        <img className={styles.category_house_item_img} src={categoryItem4} alt="" />
                         <h2 className={styles.category_house_item_title}>
                             Готовые дома с гаражем
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,7 +79,7 @@ const MainPage = () => {
                         </h2>
                     </a>
                     <a href='#' className={styles.category_house_item}>
-                        <img className={styles.category_house_item_img} src={img} alt="" />
+                        <img className={styles.category_house_item_img} src={categoryItem5} alt="" />
                         <h2 className={styles.category_house_item_title}>
                             Готовые бани
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +89,7 @@ const MainPage = () => {
                         </h2>
                     </a>
                     <a href='#' className={styles.category_house_item}>
-                        <img className={styles.category_house_item_img} src={img} alt="" />
+                        <img className={styles.category_house_item_img} src={categoryItem6} alt="" />
                         <h2 className={styles.category_house_item_title}>
                             Готовые одноэтажные дома
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,78 +104,7 @@ const MainPage = () => {
                 <div className="container">
                     <Title align="center" text="Готовые дома" />
                     <div className={styles.latest_works_inner}>
-                        <div className={styles.latest_work}>
-                            <img style={{ width: '367px' }} src={latestWork} alt="" />
-                            <span className={styles.info_icon}>
-                                ⓘ
-                            </span>
-                            <div className={styles.latest_work_hover_content}>
-                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
-                            </div>
-                        </div>
-                        <div className={styles.latest_work}>
-                            <img style={{ width: '367px' }} src={latestWork} alt="" />
-                            <span className={styles.info_icon}>
-                                ⓘ
-                            </span>
-                            <div className={styles.latest_work_hover_content}>
-                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
-                            </div>
-                        </div>
-                        <div className={styles.latest_work}>
-                            <img style={{ width: '367px' }} src={latestWork} alt="" />
-                            <span className={styles.info_icon}>
-                                ⓘ
-                            </span>
-                            <div className={styles.latest_work_hover_content}>
-                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
-                            </div>
-                        </div>
-                        <div className={styles.latest_work}>
-                            <img style={{ width: '367px' }} src={latestWork} alt="" />
-                            <span className={styles.info_icon}>
-                                ⓘ
-                            </span>
-                            <div className={styles.latest_work_hover_content}>
-                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
-                            </div>
-                        </div>
-                        <div className={styles.latest_work}>
-                            <img style={{ width: '367px' }} src={latestWork} alt="" />
-                            <span className={styles.info_icon}>
-                                ⓘ
-                            </span>
-                            <div className={styles.latest_work_hover_content}>
-                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
-                            </div>
-                        </div>
-                        <div className={styles.latest_work}>
-                            <img style={{ width: '367px' }} src={latestWork} alt="" />
-                            <span className={styles.info_icon}>
-                                ⓘ
-                            </span>
-                            <div className={styles.latest_work_hover_content}>
-                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
-                            </div>
-                        </div>
-                        <div className={styles.latest_work}>
-                            <img style={{ width: '367px' }} src={latestWork} alt="" />
-                            <span className={styles.info_icon}>
-                                ⓘ
-                            </span>
-                            <div className={styles.latest_work_hover_content}>
-                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
-                            </div>
-                        </div>
-                        <div className={styles.latest_work}>
-                            <img style={{ width: '367px' }} src={latestWork} alt="" />
-                            <span className={styles.info_icon}>
-                                ⓘ
-                            </span>
-                            <div className={styles.latest_work_hover_content}>
-                                тут надпись типа подробнее или просто инфа о доме и ссылка на него
-                            </div>
-                        </div>
+                        <LatestWorkItem />
                     </div>
                 </div>
                 <Button padding='23px 56px' text="Показать все проекты →" />
