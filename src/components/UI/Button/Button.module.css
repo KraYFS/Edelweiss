@@ -1,0 +1,13 @@
+.btn {
+    background-color: var(--main-blue);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    transition: .2s all;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: var(--main-blue-hover);
+}
