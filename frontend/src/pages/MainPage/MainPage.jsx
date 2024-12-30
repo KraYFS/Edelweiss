@@ -13,8 +13,21 @@ import categoryItem5 from '../../assets/categoryHouse/categoryItem5.png'
 import categoryItem6 from '../../assets/categoryHouse/categoryItem6.png'
 import Title from '../../components/UI/Title/Title';
 import Button from '../../components/UI/Button/Button';
+import { useEffect, useState } from 'react';
+import { BASE_URL } from '../../urls.ts'
 
 const MainPage = () => {
+    const [data, setData] = useState();
+
+    useEffect(() => {
+        fetch(`${BASE_URL}/api/houseInfo`)
+            .then(response => response.json())
+            .then(data => setData(data))
+    }, [])
+
+    console.log(data);
+
+    if (!data) return <div>wait</div>
     return (
         <div className={styles.mainPage}>
             <Swiper
@@ -104,7 +117,18 @@ const MainPage = () => {
                 <div className="container">
                     <Title align="center" text="Готовые дома" />
                     <div className={styles.latest_works_inner}>
-                        <LatestWorkItem />
+                        {data.map(item => {
+                            return (
+                                <LatestWorkItem
+                                    squareMeter={item.squareMeter}
+                                    square={item.square}
+                                    foundationType={item.foundationType}
+                                    bedrooms={item.bedrooms}
+                                    bathrooms={item.bathrooms}
+                                    stairs={item.floors}
+                                    views={item.views} />
+                            )
+                        })}
                     </div>
                 </div>
                 <Button padding='23px 56px' text="Показать все проекты →" />

@@ -58,6 +58,14 @@
     flex-direction: column;
 }
 
+.latest_works_inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0px 30px 0px;
+    justify-content: center;
+    gap: 10px;
+}
+
 .about_company {
     padding: 40px 0px;
 }

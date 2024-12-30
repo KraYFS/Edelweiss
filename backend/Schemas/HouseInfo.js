@@ -11,7 +11,8 @@ const HouseInfo = new mongoose.Schema({
     reservePower: { type: Boolean },
     description: { type: String },
     pictures: { type: Array },
-    name: { type: String }
+    name: { type: String },
+    views: { type: Number }
 })
 
 export default mongoose.model('HouseInfo', HouseInfo)
