@@ -15,7 +15,8 @@
 }
 
 .latest_work_more_info_link {
-    text-decoration: underline;
+    text-decoration: none;
+    color: var(--white);
 }
 
 .house_option {

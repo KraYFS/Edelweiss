@@ -13,7 +13,7 @@ import categoryItem5 from '../../assets/categoryHouse/categoryItem5.png'
 import categoryItem6 from '../../assets/categoryHouse/categoryItem6.png'
 import Title from '../../components/UI/Title/Title';
 import Button from '../../components/UI/Button/Button';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BASE_URL } from '../../urls.ts'
 import Header from '../../components/Header/Header.jsx';
 
@@ -122,6 +122,7 @@ const MainPage = () => {
                                 return (
                                     <LatestWorkItem
                                         key={item._id}
+                                        link={`house page/${item._id}`}
                                         squareMeter={item.squareMeter}
                                         square={item.square}
                                         foundationType={item.foundationType}

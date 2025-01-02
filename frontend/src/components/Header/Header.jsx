@@ -1,15 +1,16 @@
 import styles from './Header.module.css'
 import telegramIcon from '../../assets/icons/telegramIcon.svg'
 import Button from '../UI/Button/Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.header_inner}>
                 <div className={styles.header_first_block}>
-                    <a href='#' className={styles.header_logo}>
+                    <Link to="/" className={styles.header_logo}>
                         Edelweiss
-                    </a>
+                    </Link>
                     <div className={styles.header_info}>
                         <div className={styles.header_mail}>
                             <span className={styles.header_mail_title}>

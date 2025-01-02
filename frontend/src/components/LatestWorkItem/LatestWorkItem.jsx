@@ -7,6 +7,9 @@ import bedroom from '../../assets/icons/mainPageCardIcons/bedroom.svg'
 import latestWork from '../../assets/latestWork.png'
 import styles from './LatestWorkItem.module.css'
 import viewIcon from '../../assets/icons/viewIcon.svg'
+import { Link } from 'react-router-dom'
+
+
 
 const LatestWorkItem = (props) => {
     return (
@@ -44,7 +47,7 @@ const LatestWorkItem = (props) => {
                     <img src={bathroom} alt="" />
                     {props.bathrooms}
                 </div>
-                <span className={styles.latest_work_more_info_link}>Подробнее</span>
+                <Link to={`${props.link}`} className={styles.latest_work_more_info_link}>Подробнее</Link>
             </div>
         </div>
     );
