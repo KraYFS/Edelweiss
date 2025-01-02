@@ -25,8 +25,6 @@ const MainPage = () => {
             .then(data => setData(data))
     }, [])
 
-    console.log(data);
-
     if (!data) return <div>wait</div>
     return (
         <div className={styles.mainPage}>
@@ -120,6 +118,7 @@ const MainPage = () => {
                         {data.map(item => {
                             return (
                                 <LatestWorkItem
+                                    key={item._id}
                                     squareMeter={item.squareMeter}
                                     square={item.square}
                                     foundationType={item.foundationType}
