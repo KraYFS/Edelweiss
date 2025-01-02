@@ -6,6 +6,7 @@ import foundation from '../../assets/icons/mainPageCardIcons/foundation.svg'
 import bedroom from '../../assets/icons/mainPageCardIcons/bedroom.svg'
 import latestWork from '../../assets/latestWork.png'
 import styles from './LatestWorkItem.module.css'
+import viewIcon from '../../assets/icons/viewIcon.svg'
 
 const LatestWorkItem = (props) => {
     return (
@@ -15,6 +16,7 @@ const LatestWorkItem = (props) => {
                 ⓘ
             </span>
             <div className={styles.views}>
+                <img className={styles.viewIcon} src={viewIcon} alt="" />
                 {props.views}
             </div>
             <div className={styles.latest_work_hover_content}>

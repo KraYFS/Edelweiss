@@ -9,7 +9,7 @@ const DB_URL = 'mongodb+srv://edelweissBack:edelweissBackPass@cluster0.txcsr.mon
 const app = express()
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://edelweissbud.netlify.app']
+    origin: ['http://localhost:5173','http://localhost:5174', 'https://edelweissbud.netlify.app']
 }));
 app.use(express.json())
 app.use('/api', HouseInfoRouter)

@@ -1,12 +1,9 @@
-import Header from "./components/Header/Header"
-import MainPage from "./pages/MainPage/MainPage"
+import { RouterProvider } from 'react-router-dom'
+import router from './app/router.jsx'
 
 function App() {
   return (
-    <>
-      <Header />
-      <MainPage />
-    </>
+    <RouterProvider router={router} />
   )
 }
 
