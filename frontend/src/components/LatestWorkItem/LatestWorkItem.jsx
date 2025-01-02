@@ -8,10 +8,21 @@ import latestWork from '../../assets/latestWork.png'
 import styles from './LatestWorkItem.module.css'
 import viewIcon from '../../assets/icons/viewIcon.svg'
 import { Link } from 'react-router-dom'
-
-
+import { BASE_URL } from '../../urls'
 
 const LatestWorkItem = (props) => {
+    const addNewView = () => {
+        fetch(`${BASE_URL}/api/houseInfo/${props.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+                views: props.views + 1
+            })
+        })
+    }
+
     return (
         <div className={styles.latest_work}>
             <img style={{ width: '367px' }} src={latestWork} alt="" />
@@ -47,7 +58,7 @@ const LatestWorkItem = (props) => {
                     <img src={bathroom} alt="" />
                     {props.bathrooms}
                 </div>
-                <Link to={`${props.link}`} className={styles.latest_work_more_info_link}>Подробнее</Link>
+                <Link onClick={addNewView} to={`${props.link}`} className={styles.latest_work_more_info_link}>Подробнее</Link>
             </div>
         </div>
     );

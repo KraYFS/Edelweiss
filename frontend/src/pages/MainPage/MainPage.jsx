@@ -122,6 +122,7 @@ const MainPage = () => {
                                 return (
                                     <LatestWorkItem
                                         key={item._id}
+                                        id={item._id}
                                         link={`house page/${item._id}`}
                                         squareMeter={item.squareMeter}
                                         square={item.square}
