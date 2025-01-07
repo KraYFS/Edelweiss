@@ -18,7 +18,7 @@ import { BASE_URL } from '../../urls.ts'
 import Header from '../../components/Header/Header.jsx';
 
 const MainPage = () => {
-    const [data, setData] = useState();
+    const [data, setData] = useState(null);
 
     useEffect(() => {
         fetch(`${BASE_URL}/api/houseInfo`)
