@@ -25,7 +25,7 @@ const LatestWorkItem = (props) => {
 
     return (
         <div className={styles.latest_work}>
-            <img style={{ width: '367px' }} src={latestWork} alt="" />
+            <img style={{ width: '100%' }} src={latestWork} alt="" />
             <span className={styles.info_icon}>
                 ⓘ
             </span>
