@@ -40,15 +40,25 @@ const MainPage = () => {
                     }}
                     pagination={{ clickable: true }}
                 >
-                    <SwiperSlide>
-                        <MainPageCard />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <MainPageCard />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <MainPageCard />
-                    </SwiperSlide>
+                    {
+                        data.map(item => {
+                            return (
+                                <SwiperSlide>
+                                    <MainPageCard 
+                                    picture={item.pictures[0]} 
+                                    title={item.name}
+                                    squareMeter={item.squareMeter}
+                                    square={item.square}
+                                    foundationType={item.foundationType}
+                                    floors={item.floors}
+                                    bathrooms={item.bathrooms}
+                                    bedrooms={item.bedrooms}
+                                    id={item._id}
+                                    />
+                                </SwiperSlide>
+                            )
+                        })
+                    }
                 </Swiper>
                 <div className="container">
                     <section className={styles.category_house}>

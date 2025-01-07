@@ -1,6 +1,5 @@
 .MainPageCard {
     position: relative;
-    background: url('../../assets/mainPageBack.png') top no-repeat;
     width: 100%;
     min-height: 880px;
 }
@@ -19,8 +18,9 @@
     max-width: 1470px;
 }
 
-.mainPage_card_price {
+.mainPage_card_link {
     color: var(--orange);
+    text-decoration: underline;
 }
 
 .house_options {
