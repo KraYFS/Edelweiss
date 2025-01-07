@@ -13,16 +13,13 @@ import { Thumbs } from 'swiper/modules';
 const HousePage = () => {
     const { id } = useParams()
     const [data, setData] = useState(null)
+    const [thumbsSwiper, setThumbsSwiper] = useState();
 
     useEffect(() => {
         fetch(`${BASE_URL}/api/houseInfo/${id}`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
-
-    console.log(data);
-
-    const [thumbsSwiper, setThumbsSwiper] = useState();
 
     if (!data) return <div>wait</div>
     return (
