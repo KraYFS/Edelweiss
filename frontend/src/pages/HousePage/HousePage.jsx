@@ -37,7 +37,7 @@ const HousePage = () => {
                                 <Swiper
                                     modules={[Thumbs]}
                                     style={{ width: '970px', height: '554px' }}
-                                    thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+                                    thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                                 >
                                     {data.pictures.map((image, index) => (
                                         <SwiperSlide key={index}>
@@ -61,7 +61,7 @@ const HousePage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 }
