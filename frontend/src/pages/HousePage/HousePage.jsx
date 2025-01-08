@@ -41,7 +41,7 @@ const HousePage = () => {
                                 >
                                     {data.pictures.map((image, index) => (
                                         <SwiperSlide key={index}>
-                                            <img src={image} />
+                                            <img style={{width: '970px'}} src={image} />
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
@@ -57,6 +57,9 @@ const HousePage = () => {
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
+                            </div>
+                            <div>
+                                info
                             </div>
                         </div>
                     </div>

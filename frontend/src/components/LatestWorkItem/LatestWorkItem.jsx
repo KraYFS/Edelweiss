@@ -4,7 +4,6 @@ import stairs from '../../assets/icons/mainPageCardIcons/stairs.svg'
 import bathroom from '../../assets/icons/mainPageCardIcons/bathroom.svg'
 import foundation from '../../assets/icons/mainPageCardIcons/foundation.svg'
 import bedroom from '../../assets/icons/mainPageCardIcons/bedroom.svg'
-import latestWork from '../../assets/latestWork.png'
 import styles from './LatestWorkItem.module.css'
 import viewIcon from '../../assets/icons/viewIcon.svg'
 import { Link } from 'react-router-dom'
@@ -25,7 +24,7 @@ const LatestWorkItem = (props) => {
 
     return (
         <div className={styles.latest_work}>
-            <img style={{ width: '100%' }} src={latestWork} alt="" />
+            <img style={{ width: '100%' }} src={props.picture} alt="" />
             <span className={styles.info_icon}>
                 ⓘ
             </span>

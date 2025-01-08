@@ -140,7 +140,8 @@ const MainPage = () => {
                                         bedrooms={item.bedrooms}
                                         bathrooms={item.bathrooms}
                                         stairs={item.floors}
-                                        views={item.views} />
+                                        views={item.views}
+                                        picture={item.pictures[1]} />
                                 )
                             })}
                         </div>
