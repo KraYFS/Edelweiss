@@ -8,12 +8,32 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/thumbs';
 import { Thumbs } from 'swiper/modules';
+import Button from '../../components/UI/Button/Button.jsx';
+import squareMeter from '../../assets/icons/housePageInfo/squareMeter.svg'
+import square from '../../assets/icons/housePageInfo/square.svg'
+import stairs from '../../assets/icons/housePageInfo/stairs.svg'
+import bathroom from '../../assets/icons/housePageInfo/bathroom.svg'
+import foundation from '../../assets/icons/housePageInfo/foundation.svg'
+import bedroom from '../../assets/icons/housePageInfo/bedroom.svg'
 
 
 const HousePage = () => {
     const { id } = useParams()
     const [data, setData] = useState(null)
     const [thumbsSwiper, setThumbsSwiper] = useState();
+    const [activeTab, setActiveTab] = useState(0);
+
+    const tabs = [
+        'Описание',
+        'Характеристики',
+        'Что входит в проект',
+        'Галерея',
+        'FAQ',
+    ];
+    
+    const handleTabClick = (index) => {
+        setActiveTab(index);
+    };
 
     useEffect(() => {
         fetch(`${BASE_URL}/api/houseInfo/${id}`)
@@ -32,16 +52,16 @@ const HousePage = () => {
                         <Link className={styles.history_item}></Link>
                     </div> */}
                         <Title align="center" text={`${data.name}`} />
-                        <div className={styles.housePage_info}>
+                        <div className={styles.housePage_content}>
                             <div className={styles.house_page_swiper}>
                                 <Swiper
                                     modules={[Thumbs]}
-                                    style={{ width: '970px', height: '554px' }}
+                                    style={{ maxWidth: '970px', height: '554px' }}
                                     thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                                 >
                                     {data.pictures.map((image, index) => (
                                         <SwiperSlide key={index}>
-                                            <img style={{width: '970px'}} src={image} />
+                                            <img style={{ maxWidth: '970px', height: '554px' }} src={image} />
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
@@ -49,18 +69,73 @@ const HousePage = () => {
                                     modules={[Thumbs]}
                                     onSwiper={setThumbsSwiper}
                                     slidesPerView={20}
-                                    style={{ width: '970px', marginTop: '4px' }}
+                                    style={{ maxWidth: '970px', marginTop: '4px' }}
                                 >
                                     {data.pictures.map((image, index) => (
                                         <SwiperSlide key={index}>
-                                            <img style={{ width: '48px', padding: '4px' }} src={image} />
+                                            <img style={{ maxWidth: '48px', padding: '4px' }} src={image} />
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
                             </div>
-                            <div>
-                                info
+                            <div className={styles.housePage_info_block}>
+                                <Button text="Обратный звонок" padding="23px 119px" />
+                                <div className={styles.housePage_info_block_content}>
+                                    <div className={styles.housePage_info_block_content_item}>
+                                        <div className={styles.housePage_info_block_content_item_title}>
+                                            <img src={squareMeter} alt="" />
+                                            Общая площадь:
+                                        </div>
+                                        {data.squareMeter}
+                                    </div>
+                                    <div className={styles.housePage_info_block_content_item}>
+                                        <div className={styles.housePage_info_block_content_item_title}>
+                                            <img src={square} alt="" />
+                                            Размер дома:
+                                        </div>
+                                        {data.square}
+                                    </div>
+                                    <div className={styles.housePage_info_block_content_item}>
+                                        <div className={styles.housePage_info_block_content_item_title}>
+                                            <img src={foundation} alt="" />
+                                            Тип фундамента:
+                                        </div>
+                                        {data.foundationType}
+                                    </div>
+                                    <div className={styles.housePage_info_block_content_item}>
+                                        <div className={styles.housePage_info_block_content_item_title}>
+                                            <img src={stairs} alt="" />
+                                            Этажи:
+                                        </div>
+                                        {data.floors}
+                                    </div>
+                                    <div className={styles.housePage_info_block_content_item}>
+                                        <div className={styles.housePage_info_block_content_item_title}>
+                                            <img src={bedroom} alt="" />
+                                            Спальни:
+                                        </div>
+                                        {data.bedrooms}
+                                    </div>
+                                    <div className={styles.housePage_info_block_content_item}>
+                                        <div className={styles.housePage_info_block_content_item_title}>
+                                            <img src={bathroom} alt="" />
+                                            Санузлы
+                                        </div>
+                                        {data.bathrooms}
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div className={styles.house_page_tabs}>
+                            {tabs.map((tab, index) => {
+                                return (
+                                    <div 
+                                    onClick={() => handleTabClick(index)}
+                                    className={`${styles.house_page_tab} ${activeTab === index ? styles.active : ''}`}>
+                                        {tab}
+                                    </div>
+                                )   
+                            })}
                         </div>
                     </div>
                 </div>

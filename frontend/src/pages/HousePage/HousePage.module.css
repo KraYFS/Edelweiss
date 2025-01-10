@@ -14,11 +14,55 @@
     padding: 40px 0px 40px 0px;
 }
 
-.housePage_info {
+.housePage_content {
     display: flex;
     justify-content: space-between;
+    margin: 40px 0px;
 }
 
-.house_page_swiper {
-    margin-top: 40px;
+.housePage_info_block {
+    padding: 32px;
+    background-color: var(--white);
+    max-height: 554px;
+}
+
+.housePage_info_block_content {
+    margin-top: 24px;
+}
+
+.housePage_info_block_content_item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    color: var(--dark-blue);
+    margin-bottom: 45px;
+}
+
+.housePage_info_block_content_item_title {
+    color: var(--dark-blue05);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.house_page_tabs {
+    display: flex;
+    justify-content: center;
+}
+
+.house_page_tab {
+    padding: 14px 16px;
+    color: var(--main-blue);
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--white);
+    border-bottom: 2px solid var(--blue-light);
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.active {
+    background-color: var(--blue);
+    border-bottom: 2px solid var(--main-blue);
 }

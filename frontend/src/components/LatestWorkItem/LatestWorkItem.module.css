@@ -15,7 +15,7 @@
 }
 
 .latest_work_more_info_link {
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--white);
 }
 
