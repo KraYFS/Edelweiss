@@ -3,8 +3,8 @@ import HouseInfo from "../Schemas/HouseInfo.js"
 class HouseInfoController {
     async create(req, res) {
         try {
-            const { squareMeter, square, foundationType, floors, bedrooms, type, bathrooms, reservePower, description, pictures, name, views } = req.body
-            const houseInfo = await HouseInfo.create({ squareMeter, square, foundationType, floors, bedrooms, type, bathrooms, reservePower, description, pictures, name, views })
+            const { squareMeter, square, foundationType, floors, bedrooms, type, bathrooms, reservePower, description, pictures, name, views, extraLight, polyMaterial, sectionOfRacks, stepOfRacks, SnowWindLoad, projectAdaptation } = req.body
+            const houseInfo = await HouseInfo.create({ squareMeter, square, foundationType, floors, bedrooms, type, bathrooms, reservePower, description, pictures, name, views, extraLight, polyMaterial, sectionOfRacks, stepOfRacks, SnowWindLoad, projectAdaptation })
             res.json(houseInfo)
         } catch (e) {
             res.status(500).json(e)

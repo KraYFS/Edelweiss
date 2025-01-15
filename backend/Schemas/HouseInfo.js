@@ -12,7 +12,13 @@ const HouseInfo = new mongoose.Schema({
     description: { type: String },
     pictures: { type: Array },
     name: { type: String },
-    views: { type: Number }
+    views: { type: Number },
+    extraLight: { type: String },
+    polyMaterial: { type: String },
+    sectionOfRacks: { type: String },
+    stepOfRacks: { type: String },
+    SnowWindLoad: { type: String },
+    projectAdaptation: { type: String },
 })
 
 export default mongoose.model('HouseInfo', HouseInfo)

@@ -15,6 +15,7 @@ import stairs from '../../assets/icons/housePageInfo/stairs.svg'
 import bathroom from '../../assets/icons/housePageInfo/bathroom.svg'
 import foundation from '../../assets/icons/housePageInfo/foundation.svg'
 import bedroom from '../../assets/icons/housePageInfo/bedroom.svg'
+import HousePageTabInfo from '../../components/UI/housePageTabInfo/housePageTabInfo.jsx';
 
 
 const HousePage = () => {
@@ -22,15 +23,15 @@ const HousePage = () => {
     const [data, setData] = useState(null)
     const [thumbsSwiper, setThumbsSwiper] = useState();
     const [activeTab, setActiveTab] = useState(0);
+    const [activeTabContent, setActiveTabContent] = useState(0);
 
     const tabs = [
         'Описание',
         'Характеристики',
-        'Что входит в проект',
         'Галерея',
         'FAQ',
     ];
-    
+
     const handleTabClick = (index) => {
         setActiveTab(index);
     };
@@ -42,6 +43,12 @@ const HousePage = () => {
     }, [])
 
     if (!data) return <div>wait</div>
+
+    const tabsContent = [
+        <HousePageTabInfo type='description' text='Изготавливаем домокомплекты каркасных домов с возможностью доставки в регионы. Мы располагаем крупнейшим, среди строительных компаний, штатом проектировщиков. Готовы выполнить задачи по разработке проектов домов, фундаментов и инженерных коммуникаций любой сложности. Ключевая философия нашей компании заключается в открытости и близости к каждому потенциальному и, что важно, состоявшемуся клиенту. Стараемся снимать видеоролики с каждого из наших объектов, рассказывать о технологиях, тонкостях работы, рассказывать об используемых инструментах, а так же брать у заказчиков честные видео отзывы.' />,
+        <HousePageTabInfo type='characteristics' square={data.square} squareMeter={data.squareMeter} foundationType={data.foundationType} floors={data.floors} bedrooms={data.bedrooms} bathrooms={data.bathrooms} extraLight={data.extraLight} polyMaterial={data.polyMaterial} sectionOfRacks={data.sectionOfRacks} stepOfRacks={data.stepOfRacks} SnowWindLoad={data.SnowWindLoad} projectAdaptation={data.projectAdaptation} />
+    ]
+
     return (
         <>
             <Header />
@@ -73,7 +80,7 @@ const HousePage = () => {
                                 >
                                     {data.pictures.map((image, index) => (
                                         <SwiperSlide key={index}>
-                                            <img style={{ maxWidth: '48px', padding: '4px' }} src={image} />
+                                            <img style={{ maxWidth: '48px', minHeight: "48px", padding: '4px' }} src={image} />
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
@@ -129,13 +136,17 @@ const HousePage = () => {
                         <div className={styles.house_page_tabs}>
                             {tabs.map((tab, index) => {
                                 return (
-                                    <div 
-                                    onClick={() => handleTabClick(index)}
-                                    className={`${styles.house_page_tab} ${activeTab === index ? styles.active : ''}`}>
+                                    <div
+                                        key={index}
+                                        onClick={() => handleTabClick(index)}
+                                        className={`${styles.house_page_tab} ${activeTab === index ? styles.active : ''}`}>
                                         {tab}
                                     </div>
-                                )   
+                                )
                             })}
+                        </div>
+                        <div className={styles.tabsContent}>
+                            {tabsContent[activeTab]}
                         </div>
                     </div>
                 </div>
