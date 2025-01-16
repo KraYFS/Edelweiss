@@ -8,7 +8,7 @@ const Header = () => {
     const [isActive, setIsActive] = useState(false)
 
     const openBurgerMenu = () => {
-        isActive ? setIsActive(false) : setIsActive(true)
+        setIsActive(prev => !prev)
         document.documentElement.style.overflowY = !isActive ? 'hidden' : 'auto';
         document.body.style.overflowY = !isActive ? 'hidden' : 'auto';
     }
