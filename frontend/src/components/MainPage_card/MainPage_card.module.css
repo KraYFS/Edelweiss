@@ -57,7 +57,7 @@
         }
 
         .mainPage_card_content {
-            max-width: 400px;
+            max-width: 590px;
         }
         
         .house_option {
@@ -74,7 +74,15 @@
             min-height: 680px;
       }
       .mainPage_card_content {
-          max-width: 350px;
+          max-width: 550px;
       }
   }
+
+  @media screen and (max-width: 768px) {
+    .house_options {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
   
