@@ -3,3 +3,9 @@
     font-weight: 700;
     color: var(--dark-blue);
 }
+
+  @media screen and (max-width: 860px) {
+    .title {
+        font-size: 28px;
+    }
+  }

@@ -128,7 +128,7 @@ const MainPage = () => {
                     <div className="container">
                         <Title align="center" text="Готовые дома" />
                         <div className={styles.latest_works_inner}>
-                            {data.map(item => {
+                            {data.slice(0, 6).map(item => {
                                 return (
                                     <LatestWorkItem
                                         key={item._id}

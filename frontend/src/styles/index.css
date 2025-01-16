@@ -97,6 +97,12 @@ h6 {
 
 @media screen and (max-width: 860px) {
   .container {
-      max-width: 350px;
+      max-width: 550px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+      max-width: 320px;
   }
 }
