@@ -2,8 +2,16 @@ import styles from './Header.module.css'
 import telegramIcon from '../../assets/icons/telegramIcon.svg'
 import Button from '../UI/Button/Button';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Header = () => {
+    const [isActive, setIsActive] = useState(false)
+
+    const openBurgerMenu = () => {
+        isActive ? setIsActive(false) : setIsActive(true)
+        document.documentElement.style.overflowY = !isActive ? 'hidden' : 'auto';
+    }
+
     return (
         <header className={styles.header}>
             <div className={styles.header_inner}>
@@ -31,7 +39,7 @@ const Header = () => {
                         </div>
                         <Button padding="12px 20px" text="Обратный звонок" />
                     </div>
-                    <div className={styles.burger_menu}>
+                    <div className={isActive ? `${styles.burger_menu} ${styles.active}` : styles.burger_menu}>
                         {/* <div className={styles.burger_menu_inner}>
                         <nav className={styles.header_nav}>
                             <a href="#" className={styles.nav_links}>Каталог</a>
@@ -43,8 +51,9 @@ const Header = () => {
                             <a href="#" className={styles.nav_links}>контакты</a>
                         </nav>
                     </div> */}
-                        <span className={styles.burger_menu_btn}>|||</span>
+                        <span onClick={openBurgerMenu}>закрыть</span>
                     </div>
+                    <span onClick={openBurgerMenu} className={styles.burger_menu_btn}>|||</span>
                 </div>
                 <nav className={styles.header_nav}>
                     <a href="#" className={styles.nav_links}>Каталог</a>
