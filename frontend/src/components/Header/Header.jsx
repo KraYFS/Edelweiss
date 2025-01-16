@@ -10,6 +10,7 @@ const Header = () => {
     const openBurgerMenu = () => {
         isActive ? setIsActive(false) : setIsActive(true)
         document.documentElement.style.overflowY = !isActive ? 'hidden' : 'auto';
+        document.body.style.overflowY = !isActive ? 'hidden' : 'auto';
     }
 
     return (

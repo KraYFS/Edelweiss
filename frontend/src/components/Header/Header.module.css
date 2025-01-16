@@ -126,7 +126,7 @@
     .burger_menu_btn {
         display: block;
     }
-    html {
+    body, html {
         overflow-x: hidden;
-    }
+      }   
 }
