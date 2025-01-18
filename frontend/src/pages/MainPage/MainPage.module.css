@@ -92,6 +92,7 @@
     padding: 32px;
     background-color: var(--blue-light);
     border-radius: 5px;
+    width: 48%;
 }
 
 .advantages_item_title {
@@ -106,17 +107,8 @@
     max-width: 620px;
     margin-top: 10px;
 }
-
-@media screen and (max-width: 1600px) {
-    .container {
-        max-width: 1200px;
-    }
-  }
   
   @media screen and (max-width: 1290px) {
-    .container {
-        max-width: 800px;
-    }
 
     .category_house {
         grid-template-columns: repeat(2, 1fr);
@@ -124,11 +116,11 @@
   }
   
   @media screen and (max-width: 860px) {
-    .container {
-        max-width: 600px;
-    }
 
     .category_house {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .advantages_item {
+        width: 100%;
     }
   }
