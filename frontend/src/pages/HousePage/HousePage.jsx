@@ -28,8 +28,7 @@ const HousePage = () => {
     const tabs = [
         'Описание',
         'Характеристики',
-        'Галерея',
-        'FAQ',
+        'FAQ'
     ];
 
     const handleTabClick = (index) => {
@@ -46,7 +45,8 @@ const HousePage = () => {
 
     const tabsContent = [
         <HousePageTabInfo type='description' text='Изготавливаем домокомплекты каркасных домов с возможностью доставки в регионы. Мы располагаем крупнейшим, среди строительных компаний, штатом проектировщиков. Готовы выполнить задачи по разработке проектов домов, фундаментов и инженерных коммуникаций любой сложности. Ключевая философия нашей компании заключается в открытости и близости к каждому потенциальному и, что важно, состоявшемуся клиенту. Стараемся снимать видеоролики с каждого из наших объектов, рассказывать о технологиях, тонкостях работы, рассказывать об используемых инструментах, а так же брать у заказчиков честные видео отзывы.' />,
-        <HousePageTabInfo type='characteristics' square={data.square} squareMeter={data.squareMeter} foundationType={data.foundationType} floors={data.floors} bedrooms={data.bedrooms} bathrooms={data.bathrooms} extraLight={data.extraLight} polyMaterial={data.polyMaterial} sectionOfRacks={data.sectionOfRacks} stepOfRacks={data.stepOfRacks} SnowWindLoad={data.SnowWindLoad} projectAdaptation={data.projectAdaptation} />
+        <HousePageTabInfo type='characteristics' square={data.square} squareMeter={data.squareMeter} foundationType={data.foundationType} floors={data.floors} bedrooms={data.bedrooms} bathrooms={data.bathrooms} extraLight={data.extraLight} polyMaterial={data.polyMaterial} sectionOfRacks={data.sectionOfRacks} stepOfRacks={data.stepOfRacks} SnowWindLoad={data.SnowWindLoad} projectAdaptation={data.projectAdaptation} />,
+        <HousePageTabInfo type='faq' />
     ]
 
     return (

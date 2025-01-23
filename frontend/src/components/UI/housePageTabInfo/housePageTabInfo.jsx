@@ -90,6 +90,14 @@ const HousePageTabInfo = (props) => {
                 </div>
             </div >
         )
+    } else if (props.type === 'faq') {
+        return (
+            <div className={styles.house_page_tabs_info_faq}>
+                <div className={styles.house_page_tab_question}>
+                    Какой-то вопрос по проекту
+                </div>
+            </div>
+        )
     }
 }
 

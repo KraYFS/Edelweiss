@@ -31,3 +31,23 @@
     align-items: center;
     gap: 15px;
 }
+
+.house_page_tabs_info_faq {
+    width: 100%;
+    background-color: var(--white);
+    padding: 48px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: .2s all;
+}
+
+
+.house_page_tab_question {
+    width: 100%;
+    max-width: 1470px;
+    background-color: var(--blue-light);
+    padding: 32px 32px 32px 44px;
+    color: var(--main-blue);
+    font-size: 28px;
+    font-weight: 600;
+}
