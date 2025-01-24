@@ -50,4 +50,18 @@
     color: var(--main-blue);
     font-size: 28px;
     font-weight: 600;
+    overflow: hidden;
+    position: relative;
+}
+
+.house_page_tab_question_content {
+    width: 100%;
+    transform: translateY(-300%);
+    position: absolute;
+    transition: .5s ease;
+}
+
+.isOpen { 
+    transform: translateY(0);
+    position: relative;
 }

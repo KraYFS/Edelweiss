@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './housePageTabInfo.module.css'
 
 
@@ -91,10 +91,19 @@ const HousePageTabInfo = (props) => {
             </div >
         )
     } else if (props.type === 'faq') {
+        const [isOpen, setIsOpen] = useState(false)
+
+        const openQuestion = () => {
+            setIsOpen(prev => !prev)
+        }
+
         return (
             <div className={styles.house_page_tabs_info_faq}>
-                <div className={styles.house_page_tab_question}>
+                <div onClick={openQuestion} className={styles.house_page_tab_question}>
                     Какой-то вопрос по проекту
+                    <div className={isOpen ? `${styles.house_page_tab_question_content} ${styles.isOpen}` : styles.house_page_tab_question_content}>
+                        Кстати,  сделанные на базе интернет-аналитики выводы могут быть подвергнуты целой серии независимых исследований. Повседневная практика показывает, что консультация с широким активом влечет за собой процесс внедрения и модернизации укрепления моральных ценностей. Картельные сговоры не допускают ситуации, при которой многие известные личности ограничены исключительно образом мышления.
+                    </div>
                 </div>
             </div>
         )

@@ -2,8 +2,8 @@ import styles from './Header.module.css'
 import telegramIcon from '../../assets/icons/telegramIcon.svg'
 import burgerMenuCloseBtn from '../../assets/icons/burgerMenuCloseBtn.svg'
 import Button from '../UI/Button/Button';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
     const [isActive, setIsActive] = useState(false)
@@ -43,16 +43,16 @@ const Header = () => {
                     </div>
                     <div className={isActive ? `${styles.burger_menu} ${styles.active}` : styles.burger_menu}>
                         <div className={styles.burger_menu_inner}>
-                        <nav className={styles.burger_nav}>
-                            <a href="#" className={styles.nav_links_burger_menu}>Каталог</a>
-                            <a href="#" className={styles.nav_links_burger_menu}>проектирование</a>
-                            <a href="#" className={styles.nav_links_burger_menu}>строительство</a>
-                            <a href="#" className={styles.nav_links_burger_menu}>о компании</a>
-                            <a href="#" className={styles.nav_links_burger_menu}>блог</a>
-                            <a href="#" className={styles.nav_links_burger_menu}>клиентам</a>
-                            <a href="#" className={styles.nav_links_burger_menu}>контакты</a>
-                        </nav>
-                    </div>
+                            <nav className={styles.burger_nav}>
+                                <a href="#" className={styles.nav_links_burger_menu}>Каталог</a>
+                                <a href="#" className={styles.nav_links_burger_menu}>проектирование</a>
+                                <a href="#" className={styles.nav_links_burger_menu}>строительство</a>
+                                <a href="#" className={styles.nav_links_burger_menu}>о компании</a>
+                                <a href="#" className={styles.nav_links_burger_menu}>блог</a>
+                                <a href="#" className={styles.nav_links_burger_menu}>клиентам</a>
+                                <a href="#" className={styles.nav_links_burger_menu}>контакты</a>
+                            </nav>
+                        </div>
                         <img src={burgerMenuCloseBtn} className={styles.burgerMenuCloseBtn} onClick={openBurgerMenu} />
                     </div>
                     <span onClick={openBurgerMenu} className={styles.burger_menu_btn}>|||</span>
