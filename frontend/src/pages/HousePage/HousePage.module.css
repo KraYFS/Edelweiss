@@ -153,6 +153,10 @@
         gap: 25px;
     }
 
+    .housePage_info_block {
+        max-height: 100%;
+    }
+
     .housePage_info_block_content_item {
         flex-direction: column;
         gap: 10px;
