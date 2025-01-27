@@ -62,12 +62,12 @@ const HousePage = () => {
                             <div className={styles.house_page_swiper}>
                                 <Swiper
                                     modules={[Thumbs]}
-                                    style={{ maxWidth: '970px', height: '554px' }}
+                                    style={{ maxWidth: '970px', maxHeight: '554px' }}
                                     thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                                 >
                                     {data.pictures.map((image, index) => (
                                         <SwiperSlide key={index}>
-                                            <img style={{ maxWidth: '970px', height: '554px' }} src={image} />
+                                            <img className={styles.house_page_swiper_mainImg} src={image} />
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
@@ -79,7 +79,7 @@ const HousePage = () => {
                                 >
                                     {data.pictures.map((image, index) => (
                                         <SwiperSlide key={index}>
-                                            <img style={{ maxWidth: '48px', minHeight: "48px", padding: '4px' }} src={image} />
+                                            <img className={styles.house_page_swiper_secondImg} style={{ maxWidth: '48px', minHeight: "48px", padding: '4px' }} src={image} />
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>

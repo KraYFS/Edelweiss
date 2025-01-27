@@ -16,7 +16,8 @@
 
 .housePage_content {
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
+    justify-content: center;
     margin: 40px 0px;
 }
 
@@ -24,6 +25,8 @@
     padding: 32px;
     background-color: var(--white);
     max-height: 554px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .housePage_info_block_content {
@@ -72,3 +75,88 @@
 .tabsContent {
     transition: .2s all;
 }
+
+.house_page_swiper_mainImg {
+    width: 100%;
+    max-height: 554px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.house_page_swiper_secondImg {
+    border-radius: 4px;
+    transition: .1s all;
+}
+
+.house_page_swiper_secondImg:hover {
+    border: 2px solid var(--main-blue);
+}
+
+@media screen and (max-width: 1600px) {
+    .house_page_swiper {
+        max-width: 770px;
+    }
+
+    .house_page_swiper_mainImg {
+        max-width: 770px !important;
+        height: 437px !important;
+    }
+
+    .housePage_info_block {
+        max-height: 437px;
+    }
+
+    .housePage_info_block_content_item {
+        margin-bottom: 15px;
+    }
+
+    .house_page_swiper_secondImg {
+        max-width: 40px !important;
+        min-height: 40px !important;
+    }
+}
+  
+@media screen and (max-width: 1290px) {
+    .house_page_swiper {
+        max-width: 480px;
+    }
+
+    .house_page_swiper_mainImg {
+        max-width: 480px !important;
+        height: 437px !important;
+    }
+
+    .house_page_swiper_secondImg {
+        max-width: 30px !important;
+        min-height: 30px !important;
+    }
+
+}
+
+@media screen and (max-width: 920px) {
+    .housePage_content {
+        flex-wrap: wrap;
+    }
+
+    .house_page_swiper {
+        max-width: 100%;
+    }
+
+    .house_page_swiper_mainImg {
+        max-width: 100% !important;
+        height: 100% !important;
+    }
+
+    .housePage_info_block_content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .housePage_info_block_content_item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+  
