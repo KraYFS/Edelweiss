@@ -51,17 +51,37 @@
     font-size: 28px;
     font-weight: 600;
     overflow: hidden;
-    position: relative;
+    transition: .5s ease;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .house_page_tab_question_content {
-    width: 100%;
-    transform: translateY(-300%);
-    position: absolute;
+    max-height: 0;
+    overflow: hidden;
+    font-weight: 400;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    font-size: 22px;
+    color: var(--dark-blue);
+}
+
+.isOpen {
+    max-height: 500px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.openQuestionIcon {
+    padding: 24px;
+    background-color: var(--main-blue);
+    border-radius: 4px;
+    margin-right: 20px;
+    transform: rotate(-90deg);
     transition: .5s ease;
 }
 
-.isOpen { 
-    transform: translateY(0);
-    position: relative;
+.isOpenQuestionIcon {
+    transform: rotate(0deg);
 }

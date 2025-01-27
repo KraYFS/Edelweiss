@@ -23,7 +23,6 @@ const HousePage = () => {
     const [data, setData] = useState(null)
     const [thumbsSwiper, setThumbsSwiper] = useState();
     const [activeTab, setActiveTab] = useState(0);
-    const [activeTabContent, setActiveTabContent] = useState(0);
 
     const tabs = [
         'Описание',

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './housePageTabInfo.module.css'
-
+import openQuestionIcon from '../../../assets/icons/openQuestionIcon.svg'
 
 const HousePageTabInfo = (props) => {
     if (props.type === 'description') {
@@ -91,22 +91,40 @@ const HousePageTabInfo = (props) => {
             </div >
         )
     } else if (props.type === 'faq') {
-        const [isOpen, setIsOpen] = useState(false)
+        const [isOpen, setIsOpen] = useState(false);
+        const [isOpenIcon, setIsOpenIcon] = useState(false);
 
         const openQuestion = () => {
-            setIsOpen(prev => !prev)
-        }
+            setIsOpen(prev => !prev);
+            setIsOpenIcon(prev => !prev)
+        };
 
         return (
             <div className={styles.house_page_tabs_info_faq}>
                 <div onClick={openQuestion} className={styles.house_page_tab_question}>
+                    <img className={
+                        isOpen
+                            ? `${styles.openQuestionIcon} ${styles.isOpenQuestionIcon}`
+                            : styles.openQuestionIcon
+                    }
+                        src={openQuestionIcon}
+                    />
                     Какой-то вопрос по проекту
-                    <div className={isOpen ? `${styles.house_page_tab_question_content} ${styles.isOpen}` : styles.house_page_tab_question_content}>
-                        Кстати,  сделанные на базе интернет-аналитики выводы могут быть подвергнуты целой серии независимых исследований. Повседневная практика показывает, что консультация с широким активом влечет за собой процесс внедрения и модернизации укрепления моральных ценностей. Картельные сговоры не допускают ситуации, при которой многие известные личности ограничены исключительно образом мышления.
+                    <div
+                        className={
+                            isOpenIcon
+                                ? `${styles.house_page_tab_question_content} ${styles.isOpen}`
+                                : styles.house_page_tab_question_content
+                        }
+                    >
+                        <span className={styles.house_page_tab_question_content_text}>
+                            Кстати, сделанные на базе интернет-аналитики выводы могут быть подвергнуты целой серии независимых исследований. Повседневная практика показывает, что консультация с широким активом влечет за собой процесс внедрения и модернизации укрепления моральных ценностей. Картельные сговоры не допускают ситуации, при которой многие известные личности ограничены исключительно образом мышления.
+                        </span>
                     </div>
                 </div>
             </div>
-        )
+        );
+
     }
 }
 
