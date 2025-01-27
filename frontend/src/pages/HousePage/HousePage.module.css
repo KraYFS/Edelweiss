@@ -78,7 +78,7 @@
 
 .house_page_swiper_mainImg {
     width: 100%;
-    max-height: 554px;
+    min-height: 554px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -99,7 +99,7 @@
 
     .house_page_swiper_mainImg {
         max-width: 770px !important;
-        height: 437px !important;
+        min-height: 437px !important;
     }
 
     .housePage_info_block {
