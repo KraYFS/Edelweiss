@@ -125,6 +125,11 @@
     padding: 16px;
 }
 
+.faq_title {
+    display: flex;
+    align-items: center;
+}
+
 @media screen and (max-width: 920px) {
     .house_page_tabs_info {
         background-color: unset;

@@ -137,12 +137,14 @@ const FAQTab = () => {
         return (
             <div className={styles.house_page_tabs_info_faq}>
                 <div onClick={openQuestion} className={styles.house_page_tab_question}>
-                    <img
-                        className={isOpen ? `${styles.questionIcon} ${styles.isOpenQuestionIcon}` : styles.questionIcon}
-                        src={openQuestionIcon}
-                        alt="Icon"
-                    />
-                    Какой-то вопрос по проекту
+                    <div className={styles.faq_title}>
+                        <img
+                            className={isOpen ? `${styles.questionIcon} ${styles.isOpenQuestionIcon}` : styles.questionIcon}
+                            src={openQuestionIcon}
+                            alt="Icon"
+                        />
+                        Какой-то вопрос по проекту
+                    </div>
                     <div className={isOpenIcon ? `${styles.house_page_tab_question_content} ${styles.isOpen}` : styles.house_page_tab_question_content}>
                         <span className={styles.house_page_tab_question_content_text}>
                             Кстати, сделанные на базе интернет-аналитики выводы могут быть подвергнуты целой серии независимых исследований. Повседневная практика показывает, что консультация с широким активом влечет за собой процесс внедрения и модернизации укрепления моральных ценностей. Картельные сговоры не допускают ситуации, при которой многие известные личности ограничены исключительно образом мышления.
@@ -165,12 +167,14 @@ const FAQTab = () => {
             </div>
             <div className={styles.house_page_tab_content}>
                 <div onClick={openQuestion} className={styles.house_page_tab_question}>
-                    <img
-                        className={isOpen ? `${styles.questionIcon} ${styles.isOpenQuestionIcon}` : styles.questionIcon}
-                        src={openQuestionIcon}
-                        alt="Icon"
-                    />
-                    Какой-то вопрос по проекту
+                    <div className={styles.faq_title}>
+                        <img
+                            className={isOpen ? `${styles.questionIcon} ${styles.isOpenQuestionIcon}` : styles.questionIcon}
+                            src={openQuestionIcon}
+                            alt="Icon"
+                        />
+                        Какой-то вопрос по проекту
+                    </div>
                     <div className={isOpenIcon ? `${styles.house_page_tab_question_content} ${styles.isOpen}` : styles.house_page_tab_question_content}>
                         <span className={styles.house_page_tab_question_content_text}>
                             Кстати, сделанные на базе интернет-аналитики выводы могут быть подвергнуты целой серии независимых исследований. Повседневная практика показывает, что консультация с широким активом влечет за собой процесс внедрения и модернизации укрепления моральных ценностей. Картельные сговоры не допускают ситуации, при которой многие известные личности ограничены исключительно образом мышления.
