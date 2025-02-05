@@ -133,6 +133,10 @@
         padding: 16px;
     }
 
+    .house_page_tab_content {
+        font-size: 16px;
+    }
+
     .housePage_info_block_content {
         width: 100%;
         margin-top: 0;
@@ -148,6 +152,14 @@
     }
 
     .house_page_tab_question_content_text {
+        font-size: 16px;
+    }
+
+    .housePage_info_block_content_item {
+        font-size: 16px;
+    }
+
+    .housePage_info_block_content_item_title {
         font-size: 16px;
     }
 }
