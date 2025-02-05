@@ -7,7 +7,8 @@ import Header from '../../components/Header/Header.jsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/thumbs';
-import { Thumbs } from 'swiper/modules';
+import 'swiper/css/pagination';
+import { Pagination, Thumbs } from 'swiper/modules';
 import Button from '../../components/UI/Button/Button.jsx';
 import squareMeter from '../../assets/icons/housePageInfo/squareMeter.svg'
 import square from '../../assets/icons/housePageInfo/square.svg'
@@ -23,6 +24,13 @@ const HousePage = () => {
     const [data, setData] = useState(null)
     const [thumbsSwiper, setThumbsSwiper] = useState();
     const [activeTab, setActiveTab] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     const tabs = [
         'Описание',
@@ -60,29 +68,50 @@ const HousePage = () => {
                         <Title align="center" text={`${data.name}`} />
                         <div className={styles.housePage_content}>
                             <div className={styles.house_page_swiper}>
-                                <Swiper
-                                    modules={[Thumbs]}
-                                    style={{ maxWidth: '970px', maxHeight: '554px' }}
-                                    thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-                                >
-                                    {data.pictures.map((image, index) => (
-                                        <SwiperSlide key={index}>
-                                            <img className={styles.house_page_swiper_mainImg} src={image} />
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-                                <Swiper
-                                    modules={[Thumbs]}
-                                    onSwiper={setThumbsSwiper}
-                                    slidesPerView={20}
-                                    style={{ maxWidth: '970px', marginTop: '4px' }}
-                                >
-                                    {data.pictures.map((image, index) => (
-                                        <SwiperSlide key={index}>
-                                            <img className={styles.house_page_swiper_secondImg} style={{ maxWidth: '48px', minHeight: "48px", padding: '4px' }} src={image} />
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
+                                {
+                                    windowWidth <= 920 ? (
+                                        <>
+                                            <Swiper
+                                                modules={[Thumbs, Pagination]}
+                                                pagination={true}
+                                                style={{ maxWidth: '970px', maxHeight: '554px' }}
+
+                                            >
+                                                {data.pictures.map((image, index) => (
+                                                    <SwiperSlide key={index}>
+                                                        <img className={styles.house_page_swiper_mainImg} src={image} />
+                                                    </SwiperSlide>
+                                                ))}
+                                            </Swiper>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Swiper
+                                                modules={[Thumbs]}
+                                                style={{ maxWidth: '970px', maxHeight: '554px' }}
+                                                thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                                            >
+                                                {data.pictures.map((image, index) => (
+                                                    <SwiperSlide key={index}>
+                                                        <img className={styles.house_page_swiper_mainImg} src={image} />
+                                                    </SwiperSlide>
+                                                ))}
+                                            </Swiper>
+                                            <Swiper
+                                                modules={[Thumbs]}
+                                                onSwiper={setThumbsSwiper}
+                                                slidesPerView={20}
+                                                style={{ maxWidth: '970px', marginTop: '4px' }}
+                                            >
+                                                {data.pictures.map((image, index) => (
+                                                    <SwiperSlide key={index}>
+                                                        <img className={styles.house_page_swiper_secondImg} style={{ maxWidth: '48px', minHeight: "48px", padding: '4px' }} src={image} />
+                                                    </SwiperSlide>
+                                                ))}
+                                            </Swiper>
+                                        </>
+                                    )
+                                }
                             </div>
                             <div className={styles.housePage_info_block}>
                                 <Button text="Обратный звонок" padding="23px 119px" />
@@ -145,7 +174,12 @@ const HousePage = () => {
                             })}
                         </div>
                         <div className={styles.tabsContent}>
-                            {tabsContent[activeTab]}
+                            {windowWidth > 920 
+                            ? tabsContent[activeTab]
+                            : tabsContent.map((item, index) => {
+                                return <div key={index}>{item}</div>
+                            })
+                            }
                         </div>
                     </div>
                 </div>

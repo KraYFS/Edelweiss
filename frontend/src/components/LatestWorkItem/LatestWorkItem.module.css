@@ -96,5 +96,10 @@
 @media screen and (max-width: 550px) {
     .latest_work {
         width: 100%;
+        margin-top: 25px;
+    }
+
+    .btn {
+        text-transform: none;
     }
 }

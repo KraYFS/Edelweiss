@@ -22,11 +22,14 @@
 }
 
 .housePage_info_block {
+    width: 100%;
     padding: 32px;
     background-color: var(--white);
     max-height: 554px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .housePage_info_block_content {
@@ -65,6 +68,8 @@
     border-bottom: 2px solid var(--blue-light);
     cursor: pointer;
     transition: .2s all;
+    width: 100%;
+    text-align: center;
 }
 
 .active {
@@ -155,6 +160,7 @@
 
     .housePage_info_block {
         max-height: 100%;
+        width: 200%;
     }
 
     .housePage_info_block_content_item {
@@ -162,5 +168,12 @@
         gap: 10px;
     }
 
+    .housePage_info_block_content_item {
+        font-size: 16px;
+    }
+
+    .house_page_tabs {
+        display: none;
+    }
 }
   

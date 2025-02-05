@@ -126,4 +126,8 @@
     .advantages_item {
         width: 100%;
     }
+
+    .category_house_item_title svg {
+        display: none;
+    }
   }
