@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import CatalogPage from '../pages/CatalogPage/CatalogPage';
 
 const MainPage = React.lazy(() => import('../pages/MainPage/MainPage'));
 const ErrorPage = React.lazy(() => import('../pages/errorPage/errorPage'));
@@ -11,6 +12,19 @@ const Router = createBrowserRouter([
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <MainPage />
+      </Suspense>
+    ),
+    errorElement: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <ErrorPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/catalog',
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <CatalogPage />
       </Suspense>
     ),
     errorElement: (

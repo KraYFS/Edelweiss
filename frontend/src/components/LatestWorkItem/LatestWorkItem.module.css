@@ -12,6 +12,7 @@
     justify-content: center;
     font-size: 26px;
     padding: 10px;
+    backdrop-filter: blur(2px);
 }
 
 .latest_work_more_info_link {
@@ -79,6 +80,24 @@
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.animation {
+    animation: clueAnim 1.75s linear 2.5s alternate none;
+}
+
+@keyframes clueAnim {
+    0% {
+        bottom: 0px;
+    }
+
+    50% {
+        bottom: 50px;
+    }
+
+    100% {
+        bottom: 100%;
+    }
 }
 
 @media screen and (max-width: 1290px) {

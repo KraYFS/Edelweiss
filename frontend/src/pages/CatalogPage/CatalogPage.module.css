@@ -1,0 +1,42 @@
+.catalogPage {
+    background-color: var(--blue);
+}
+
+.catalogPage_inner {
+    padding: 80px 0px 80px 0px;
+}
+
+.catalog_filter_tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.catalog {
+    padding-top: 40px;
+    display: flex;
+    gap: 30px;
+}
+
+.catalog_items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.activeTab {
+    background-color: var(--blue) !important;
+    box-shadow: 0px 4px 2px 0px var(--main-blue) !important;
+}
+
+.catalog_filter {
+    max-width: 270px;
+    width: 100%;
+}
+
+.catalog_filter_title {
+    color: var(--dark-blue);
+    font-size: 28px;
+    font-weight: 700;
+}

@@ -32,7 +32,7 @@ const LatestWorkItem = (props) => {
                 <img className={styles.viewIcon} src={viewIcon} alt="" />
                 {props.views}
             </div>
-            <div className={styles.latest_work_hover_content}>
+            <div className={pageYOffset <= 1100 ? `${styles.latest_work_hover_content} ${styles.animation}` : styles.latest_work_hover_content}>
                 <div className={styles.house_option}>
                     <img src={squareMeter} alt="" />
                     {props.squareMeter}

@@ -134,6 +134,15 @@
     transform: translateX(0);
 }
 
+.nav_links.active {
+  background-color: var(--blue-light);
+}
+
+.nav_links_burger_menu.active {
+  background-color: var(--blue-light);
+  color: var(--main-blue);
+}
+
 @media screen and (max-width: 920px) {
     .header_info {
         display: none;

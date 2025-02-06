@@ -174,11 +174,11 @@ const HousePage = () => {
                             })}
                         </div>
                         <div className={styles.tabsContent}>
-                            {windowWidth > 920 
-                            ? tabsContent[activeTab]
-                            : tabsContent.map((item, index) => {
-                                return <div key={index}>{item}</div>
-                            })
+                            {windowWidth > 920
+                                ? tabsContent[activeTab]
+                                : tabsContent.map((item, index) => {
+                                    return <div key={index}>{item}</div>
+                                })
                             }
                         </div>
                     </div>

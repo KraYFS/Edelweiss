@@ -16,6 +16,7 @@ import Button from '../../components/UI/Button/Button';
 import { useEffect, useRef, useState } from 'react';
 import { BASE_URL } from '../../urls.ts'
 import Header from '../../components/Header/Header.jsx';
+import { Link } from 'react-router-dom';
 
 const MainPage = () => {
     const [data, setData] = useState(null);
@@ -44,16 +45,16 @@ const MainPage = () => {
                         data.map(item => {
                             return (
                                 <SwiperSlide>
-                                    <MainPageCard 
-                                    picture={item.pictures[0]} 
-                                    title={item.name}
-                                    squareMeter={item.squareMeter}
-                                    square={item.square}
-                                    foundationType={item.foundationType}
-                                    floors={item.floors}
-                                    bathrooms={item.bathrooms}
-                                    bedrooms={item.bedrooms}
-                                    id={item._id}
+                                    <MainPageCard
+                                        picture={item.pictures[0]}
+                                        title={item.name}
+                                        squareMeter={item.squareMeter}
+                                        square={item.square}
+                                        foundationType={item.foundationType}
+                                        floors={item.floors}
+                                        bathrooms={item.bathrooms}
+                                        bedrooms={item.bedrooms}
+                                        id={item._id}
                                     />
                                 </SwiperSlide>
                             )
@@ -146,7 +147,9 @@ const MainPage = () => {
                             })}
                         </div>
                     </div>
-                    <Button padding='23px 56px' text="Показать все проекты →" />
+                    <Link to='/catalog'>
+                        <Button padding='23px 56px' text="Показать все проекты →" />
+                    </Link>
                 </section>
                 <section className={styles.advantages}>
                     <div className="container">
