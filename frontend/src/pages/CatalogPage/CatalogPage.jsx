@@ -13,16 +13,16 @@ import { BASE_URL } from '../../urls';
 
 const CatalogPage = () => {
     const CatalogFilterTabs = [
+        { title: 'Все типы домов' },
         { title: 'Одноэтажный дом', icon: oneStoryIcon },
         { title: 'Двухэтажный дом', icon: twoStoryIcon },
         { title: 'Дом с гаражем', icon: houseWithGarage },
         { title: 'Дом с террасой', icon: HouseWithATerrace },
-        { title: 'Баня', icon: houseWithGarage },
-        { title: 'Все типы домов' }
+        { title: 'Баня', icon: houseWithGarage }
     ]
 
 
-    const [activeFilterTab, setActiveFilterTab] = useState(CatalogFilterTabs.length - 1)
+    const [activeFilterTab, setActiveFilterTab] = useState(0)
     const [data, setData] = useState(null)
 
     useEffect(() => {
@@ -35,6 +35,7 @@ const CatalogPage = () => {
         setActiveFilterTab(index)
     }
 
+    if (!data) return <>wait</>
     return (
         <>
             <Header />
@@ -52,11 +53,55 @@ const CatalogPage = () => {
                                 <div className={styles.catalog_filter_title}>
                                     Фильтры
                                 </div>
+                                <div className={styles.filter_item_wrapper}>
+                                    <span className={styles.filter_item_title}>
+                                        Тип
+                                    </span>
+                                    <select className={styles.filter_item} value={activeFilterTab} onChange={(e) => handleTabClick(+e.target.value)}>
+                                        <option value="" disabled hidden>
+                                            Выберите тип дома
+                                        </option>
+                                        {
+                                            CatalogFilterTabs.map(({ title, icon }, index) => {
+                                                return <option key={index} value={index}>{title}</option>
+                                            })
+                                        }
+                                    </select>
+                                </div>
+                                <div className={styles.filter_item_wrapper}>
+                                    <span className={styles.filter_item_title}>
+                                        Технологии строительсива
+                                    </span>
+                                    <select className={styles.filter_item}>
+                                        <option>
+                                            Свайный
+                                        </option>
+                                    </select>
+                                </div>
+                                <div className={styles.filter_item_wrapper}>
+                                    <span className={styles.filter_item_title}>
+                                        Стиль дома
+                                    </span>
+                                    <select className={styles.filter_item}>
+                                        <option>
+                                            Красивый
+                                        </option>
+                                    </select>
+                                </div>
+                                <div className={styles.filter_item_wrapper}>
+                                    <span className={styles.filter_item_title}>
+                                        Этажи
+                                    </span>
+                                    <select className={styles.filter_item}>
+                                        <option>
+                                            1
+                                        </option>
+                                    </select>
+                                </div>
                             </aside>
                             <div className={styles.catalog_items}>
-                                {!data
-                                    ? (<>wait</>)
-                                    : data.map((item, index) => {
+                                {
+                                    data.map((item, index) => {
                                         return <CatalogCard
                                             title={item.name}
                                             img={item.pictures[0]}

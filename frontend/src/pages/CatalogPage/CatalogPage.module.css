@@ -33,10 +33,33 @@
 .catalog_filter {
     max-width: 270px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .catalog_filter_title {
     color: var(--dark-blue);
     font-size: 28px;
     font-weight: 700;
+}
+
+.filter_item {
+    padding: 28px 12px 8px 12px;
+    width: 100%;
+    border-bottom: 2px solid var(--main-blue);
+    border-radius: 4px;
+    color: var(--dark-blue);
+    font-size: 18px;
+}
+
+.filter_item_wrapper {
+    position: relative;
+}
+
+.filter_item_title {
+    color: var(--dark-blue05);
+    position: absolute;
+    top: 8px;
+    left: 12px;
 }
