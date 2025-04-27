@@ -9,5 +9,6 @@ HouseInfoRouter.get('/houseInfo/:id', HouseInfo.getOne)
 HouseInfoRouter.put('/houseInfo', HouseInfo.update)
 HouseInfoRouter.patch('/houseInfo/:id', HouseInfo.patch)
 HouseInfoRouter.delete('/houseInfo/:id', HouseInfo.delete)
+HouseInfoRouter.delete('/houseInfo', HouseInfo.deleteAll)
 
 export default HouseInfoRouter

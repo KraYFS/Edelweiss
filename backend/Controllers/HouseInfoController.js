@@ -71,6 +71,14 @@ class HouseInfoController {
             res.status(500).json(e)
         }
     }
+    async deleteAll(req, res) {
+        try {
+            const result = await HouseInfo.deleteMany({});
+            return res.json(result);
+        } catch (e) {
+            res.status(500).json(e);
+        }
+    }
 }
 
 export default new HouseInfoController()

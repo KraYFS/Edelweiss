@@ -74,7 +74,7 @@
 }
 
 .latest_work {
-    width: 24%;
+    width: 100%;
     position: relative;
     z-index: 1;
     overflow: hidden;

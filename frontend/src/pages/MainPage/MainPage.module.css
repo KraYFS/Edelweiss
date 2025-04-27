@@ -61,10 +61,9 @@
 }
 
 .latest_works_inner {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin: 30px 0px 30px 0px;
-    justify-content: center;
     gap: 10px;
 }
 
