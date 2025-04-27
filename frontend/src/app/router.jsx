@@ -1,14 +1,15 @@
-import React, { Suspense } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
-import CatalogPage from '../pages/CatalogPage/CatalogPage';
+import React, { Suspense } from "react";
+import { createBrowserRouter } from "react-router-dom";
+import CatalogPage from "../pages/CatalogPage/CatalogPage";
 
-const MainPage = React.lazy(() => import('../pages/MainPage/MainPage'));
-const ErrorPage = React.lazy(() => import('../pages/errorPage/errorPage'));
-const CardPage = React.lazy(() => import('../pages/HousePage/HousePage'));
+const MainPage = React.lazy(() => import("../pages/MainPage/MainPage"));
+const ErrorPage = React.lazy(() => import("../pages/errorPage/errorPage"));
+const CardPage = React.lazy(() => import("../pages/HousePage/HousePage"));
+const Clients = React.lazy(() => import("../pages/Clients"));
 
 const Router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <MainPage />
@@ -21,7 +22,7 @@ const Router = createBrowserRouter([
     ),
   },
   {
-    path: '/catalog',
+    path: "/catalog",
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <CatalogPage />
@@ -34,7 +35,7 @@ const Router = createBrowserRouter([
     ),
   },
   {
-    path: '/catalog/:filter',
+    path: "/catalog/:filter",
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <CatalogPage />
@@ -47,10 +48,23 @@ const Router = createBrowserRouter([
     ),
   },
   {
-    path: '/house page/:id',
+    path: "/house page/:id",
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <CardPage />
+      </Suspense>
+    ),
+    errorElement: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <ErrorPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/clients",
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Clients />
       </Suspense>
     ),
     errorElement: (

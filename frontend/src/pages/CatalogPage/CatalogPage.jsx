@@ -31,7 +31,7 @@ const CatalogPage = () => {
     fetch(`${BASE_URL}/api/houseInfo/`)
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, [data]);
+  }, []);
 
   useEffect(() => {
     const activeTab = CatalogFilterTabs.findIndex(
