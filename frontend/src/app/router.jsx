@@ -34,6 +34,19 @@ const Router = createBrowserRouter([
     ),
   },
   {
+    path: '/catalog/:filter',
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <CatalogPage />
+      </Suspense>
+    ),
+    errorElement: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <ErrorPage />
+      </Suspense>
+    ),
+  },
+  {
     path: '/house page/:id',
     element: (
       <Suspense fallback={<div>Loading...</div>}>

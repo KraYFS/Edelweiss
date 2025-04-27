@@ -1,5 +1,6 @@
 .catalogPage {
     background-color: var(--blue);
+    min-height: 100vh;
 }
 
 .catalogPage_inner {

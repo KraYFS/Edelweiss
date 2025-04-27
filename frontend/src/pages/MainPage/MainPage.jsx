@@ -25,7 +25,7 @@ const MainPage = () => {
     fetch(`${BASE_URL}/api/houseInfo`)
       .then((response) => response.json())
       .then((data) => setData(data));
-  }, []);
+  }, [data]);
 
   if (!data) return <div>wait</div>;
   return (
