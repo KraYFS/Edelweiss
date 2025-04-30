@@ -6,10 +6,18 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: .2s all;
     max-height: 232px;
+    overflow: hidden;
 }
 
 .catalogCard:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+    .catalogCard_img {
+        transform: scale(1.1);
+    }
+}
+
+.img_wrapper {
+    overflow: hidden;
 }
 
 .catalogCard_inner {
@@ -21,10 +29,12 @@
 }
 
 .catalogCard_img {
+    width: 100%;
     max-width: 270px;
     height: 154px;
     object-fit: cover;
     border-radius: 8px 8px 0px 0px;
+    transition: .3s all;
 }
 
 .catalogCard_title {
