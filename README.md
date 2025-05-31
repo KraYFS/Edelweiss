@@ -1,5 +1,5 @@
 This is a project that will be used for commercial purposes written in 
-- # React + Vite
+- # React + TS + Vite
 - # ReactRouterDOM
 - # i18react
 - # SwiperJS
