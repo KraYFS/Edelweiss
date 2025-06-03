@@ -11,9 +11,7 @@ const Contact = () => {
         <a className='header__contact-email-link'>Edelweiss@gmail.com</a>
       </div>
       <div className='header__contact-telegram'>
-        <TelegramIcon
-          className='header__contact-telegram-icon'
-        />
+        <TelegramIcon className='header__contact-telegram-icon' />
         <div className='header__contact-telegram-info'>
           <div className='header__contact-telegram-number'> +38099123456</div>
           <div className='header__contact-telegram-subtitle'>
@@ -21,7 +19,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Button text='Обратный звонок'/>
+      <Button text='Обратный звонок' />
     </div>
   )
 }
