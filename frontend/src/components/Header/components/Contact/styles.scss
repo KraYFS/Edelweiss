@@ -19,5 +19,25 @@
         color: var(--main-blue);
       }
     }
+    &-telegram {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-number {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--dark-blue);
+      }
+
+      &-subtitle {
+        color: var(--dark-blue05);
+      }
+    }
   }
 }
