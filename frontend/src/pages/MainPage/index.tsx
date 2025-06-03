@@ -3,7 +3,6 @@
 // import { Pagination, Autoplay } from 'swiper/modules'
 // import 'swiper/css'
 // import 'swiper/css/pagination'
-import styles from './styles.module.css'
 // import LatestWorkItem from '../../components/LatestWorkItem/LatestWorkItem.jsx'
 // import categoryItem1 from '../../assets/categoryHouse/categoryItem1.png'
 // import categoryItem2 from '../../assets/categoryHouse/categoryItem2.png'
@@ -14,9 +13,11 @@ import styles from './styles.module.css'
 // import Title from '../../components/UI/Title/Title'
 // import Button from '../../components/UI/Button/Button'
 import { useEffect, useState } from 'react'
-import { BASE_URL } from '../../urls'
 // import Header from '../../components/Header/Header.jsx'
 import { Link } from 'react-router-dom'
+
+import { BASE_URL } from '../../urls'
+import styles from './styles.module.css'
 
 const MainPage = () => {
   const [data, setData] = useState(null)

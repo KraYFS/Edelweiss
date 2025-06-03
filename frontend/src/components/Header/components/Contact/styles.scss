@@ -1,0 +1,23 @@
+.header {
+  &__contact {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+
+    &-email {
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        font-size: 14px;
+        color: var(--dark-blue);
+      }
+
+      &-link {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--main-blue);
+      }
+    }
+  }
+}
