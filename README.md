@@ -21,11 +21,13 @@
 
 ## 📁 Project Structure
 
+```bash
 Edelweiss/
 ├── frontend/ # Client-side code
 ├── backend/ # Server-side code and API
 ├── .gitignore
 ├── README.md
+```
 
 ## ⚙️ Getting Started
 
@@ -38,6 +40,7 @@ npm run dev
 ```
 
 ### Backend
+
 ```bash
 cd backend
 npm install
