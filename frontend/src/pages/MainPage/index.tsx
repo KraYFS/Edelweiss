@@ -16,11 +16,18 @@ import { useEffect, useState } from 'react'
 // import Header from '../../components/Header/Header.jsx'
 import { Link } from 'react-router-dom'
 
+import MainSliderCard from '../../components/MainSliderCard'
 import { BASE_URL } from '../../urls'
 import styles from './styles.module.css'
 
+type Item = {
+  pictures: string
+  name: string
+  _id: string
+}
+
 const MainPage = () => {
-  const [data, setData] = useState(null)
+  const [data, setData] = useState<Item[]>([])
 
   useEffect(() => {
     fetch(`${BASE_URL}/api/houseInfo`)
@@ -60,6 +67,14 @@ const MainPage = () => {
             )
           })}
         </Swiper> */}
+        {data.map(({ pictures, name, _id }, index) => (
+          <MainSliderCard
+            key={index}
+            picture={pictures[0]}
+            title={name}
+            id={_id}
+          />
+        ))}
         <div className='container'>
           <section className={styles.category_house}>
             <a href='#' className={styles.category_house_item}>
