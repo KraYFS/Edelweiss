@@ -67,7 +67,7 @@ const MainPage = () => {
             )
           })}
         </Swiper> */}
-        {data.map(({ pictures, name, _id }, index) => (
+        {data.slice(0, 1).map(({ pictures, name, _id }, index) => (
           <MainSliderCard
             key={index}
             picture={pictures[0]}
