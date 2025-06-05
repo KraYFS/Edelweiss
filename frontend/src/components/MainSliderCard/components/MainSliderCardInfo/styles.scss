@@ -1,3 +1,17 @@
 .main-slider-card {
-    
+  &__info {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__feature {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
 }

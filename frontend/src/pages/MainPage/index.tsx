@@ -17,14 +17,15 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import MainSliderCard from '../../components/MainSliderCard'
+import type { HouseFeatures } from '../../types/HouseFeatures'
 import { BASE_URL } from '../../urls'
 import styles from './styles.module.css'
 
 type Item = {
-  pictures: string
+  pictures: string[]
   name: string
   _id: string
-}
+} & HouseFeatures
 
 const MainPage = () => {
   const [data, setData] = useState<Item[]>([])
@@ -67,14 +68,34 @@ const MainPage = () => {
             )
           })}
         </Swiper> */}
-        {data.slice(0, 1).map(({ pictures, name, _id }, index) => (
-          <MainSliderCard
-            key={index}
-            picture={pictures[0]}
-            title={name}
-            id={_id}
-          />
-        ))}
+        {data
+          .slice(0, 1)
+          .map(
+            ({
+              pictures,
+              name,
+              _id,
+              squareMeter,
+              square,
+              foundationType,
+              floors,
+              bedrooms,
+              bathrooms
+            }) => (
+              <MainSliderCard
+                key={_id}
+                picture={pictures[0]}
+                title={name}
+                id={_id}
+                squareMeter={squareMeter}
+                square={square}
+                foundationType={foundationType}
+                floors={floors}
+                bedrooms={bedrooms}
+                bathrooms={bathrooms}
+              />
+            )
+          )}
         <div className='container'>
           <section className={styles.category_house}>
             <a href='#' className={styles.category_house_item}>

@@ -2,13 +2,26 @@ import './styles.scss'
 
 import { Link } from 'react-router-dom'
 
+import type { HouseFeatures } from '../../types/HouseFeatures'
+import MainSliderCardInfo from './components/MainSliderCardInfo'
+
 type Props = {
   picture: string
   title: string
   id: string
-}
+} & HouseFeatures
 
-const MainSliderCard = ({ picture, title, id }: Props) => {
+const MainSliderCard = ({
+  picture,
+  title,
+  id,
+  squareMeter,
+  square,
+  foundationType,
+  floors,
+  bedrooms,
+  bathrooms
+}: Props) => {
   return (
     <div
       style={{
@@ -28,6 +41,14 @@ const MainSliderCard = ({ picture, title, id }: Props) => {
               Подробнее
             </Link>
           </div>
+          <MainSliderCardInfo
+            squareMeter={squareMeter}
+            square={square}
+            foundationType={foundationType}
+            floors={floors}
+            bedrooms={bedrooms}
+            bathrooms={bathrooms}
+          />
         </div>
       </div>
     </div>
