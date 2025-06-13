@@ -36,6 +36,8 @@ const MainPage = () => {
       .then(data => setData(data))
   }, [])
 
+  console.log(data)
+
   if (!data) return <div>wait</div>
   return (
     <>
@@ -68,34 +70,20 @@ const MainPage = () => {
             )
           })}
         </Swiper> */}
-        {data
-          .slice(0, 1)
-          .map(
-            ({
-              pictures,
-              name,
-              _id,
-              squareMeter,
-              square,
-              foundationType,
-              floors,
-              bedrooms,
-              bathrooms
-            }) => (
-              <MainSliderCard
-                key={_id}
-                picture={pictures[0]}
-                title={name}
-                id={_id}
-                squareMeter={squareMeter}
-                square={square}
-                foundationType={foundationType}
-                floors={floors}
-                bedrooms={bedrooms}
-                bathrooms={bathrooms}
-              />
-            )
-          )}
+        {data.slice(0, 1).map(item => (
+          <MainSliderCard
+            key={item._id}
+            picture={item.pictures[0]}
+            title={item.name}
+            id={item._id}
+            squareMeter={item.squareMeter}
+            square={item.square}
+            foundationType={item.foundationType}
+            floors={item.floors}
+            bedrooms={item.bedrooms}
+            bathrooms={item.bathrooms}
+          />
+        ))}
         <div className='container'>
           <section className={styles.category_house}>
             <a href='#' className={styles.category_house_item}>
