@@ -16,17 +16,28 @@ import { useEffect, useState } from 'react'
 // import Header from '../../components/Header/Header.jsx'
 import { Link } from 'react-router-dom'
 
+import MainSliderCard from '../../components/MainSliderCard'
+import type { HouseFeatures } from '../../types/HouseFeatures'
 import { BASE_URL } from '../../urls'
 import styles from './styles.module.css'
+import MainSwiper from '../../components/MainSwiper'
+
+type Item = {
+  pictures: string[]
+  name: string
+  _id: string
+} & HouseFeatures
 
 const MainPage = () => {
-  const [data, setData] = useState(null)
+  const [data, setData] = useState<Item[]>([])
 
   useEffect(() => {
     fetch(`${BASE_URL}/api/houseInfo`)
       .then(response => response.json())
       .then(data => setData(data))
   }, [])
+
+  console.log(data)
 
   if (!data) return <div>wait</div>
   return (
@@ -60,6 +71,24 @@ const MainPage = () => {
             )
           })}
         </Swiper> */}
+        {
+          <MainSwiper
+            data={data}
+            htmlElem={house => (
+              <MainSliderCard
+                picture={house.pictures[0]} // берём первый элемент из массива
+                title={house.name}
+                id={house._id}
+                squareMeter={house.squareMeter}
+                square={house.square}
+                foundationType={house.foundationType}
+                floors={house.floors}
+                bedrooms={house.bedrooms}
+                bathrooms={house.bathrooms}
+              />
+            )}
+          />
+        }
         <div className='container'>
           <section className={styles.category_house}>
             <a href='#' className={styles.category_house_item}>
