@@ -20,6 +20,7 @@ import MainSliderCard from '../../components/MainSliderCard'
 import type { HouseFeatures } from '../../types/HouseFeatures'
 import { BASE_URL } from '../../urls'
 import styles from './styles.module.css'
+import MainSwiper from '../../components/MainSwiper'
 
 type Item = {
   pictures: string[]
@@ -70,20 +71,24 @@ const MainPage = () => {
             )
           })}
         </Swiper> */}
-        {data.slice(0, 1).map(item => (
-          <MainSliderCard
-            key={item._id}
-            picture={item.pictures[0]}
-            title={item.name}
-            id={item._id}
-            squareMeter={item.squareMeter}
-            square={item.square}
-            foundationType={item.foundationType}
-            floors={item.floors}
-            bedrooms={item.bedrooms}
-            bathrooms={item.bathrooms}
+        {
+          <MainSwiper
+            data={data}
+            htmlElem={house => (
+              <MainSliderCard
+                picture={house.pictures[0]} // берём первый элемент из массива
+                title={house.name}
+                id={house._id}
+                squareMeter={house.squareMeter}
+                square={house.square}
+                foundationType={house.foundationType}
+                floors={house.floors}
+                bedrooms={house.bedrooms}
+                bathrooms={house.bathrooms}
+              />
+            )}
           />
-        ))}
+        }
         <div className='container'>
           <section className={styles.category_house}>
             <a href='#' className={styles.category_house_item}>

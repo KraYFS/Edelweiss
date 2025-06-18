@@ -4,13 +4,12 @@ import 'swiper/css/pagination'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import type { HouseFeatures } from '../../types/HouseFeatures'
-
-type MainSwiperProps = {
-  data?: HouseFeatures[]
+type MainSwiperProps<T> = {
+  data: T[]
+  htmlElem: (item: T) => React.ReactNode
 }
 
-const MainSwiper = ({ data = [] }: MainSwiperProps) => {
+function MainSwiper<T>({ data, htmlElem }: MainSwiperProps<T>) {
   return (
     <Swiper
       modules={[Pagination, Autoplay]}
@@ -21,13 +20,9 @@ const MainSwiper = ({ data = [] }: MainSwiperProps) => {
       }}
       pagination={{ clickable: true }}
     >
-      {data.map(item => {
-        return (
-          <SwiperSlide>
-
-          </SwiperSlide>
-        )
-      })}
+      {data.map((item, index) => (
+        <SwiperSlide key={index}>{htmlElem(item)}</SwiperSlide>
+      ))}
     </Swiper>
   )
 }
